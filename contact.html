@@ -408,7 +408,6 @@ section{padding-block:clamp(80px,11vw,160px)}
 .alt-lines{display:grid;gap:6px;margin-top:22px;font-size:1.1rem}
 .alt-lines a{text-decoration:none;border-bottom:1px solid var(--night-rule)}
 .alt-lines a:hover{border-color:currentColor}
-.copy-btn{all:unset;cursor:pointer;display:inline-flex;align-items:center;min-height:44px;margin-left:14px;font:600 .75rem/1 var(--label);letter-spacing:.14em;text-transform:uppercase;color:var(--on-night-muted);border-bottom:1px solid currentColor}
 .routes{list-style:none;margin:0;padding:0;border-top:3px solid currentColor}
 .routes li{display:flex;align-items:baseline;gap:12px;padding:12px 0;border-bottom:1px solid var(--night-rule)}
 .routes i{flex:1;border-bottom:2px dotted currentColor;opacity:.3;transform:translateY(-4px)}
@@ -687,6 +686,19 @@ footer li a,.alt-lines a{display:inline-block;padding-block:8px}
 @media (max-width:600px){.spa-photos{grid-template-columns:1fr 1fr}}
 .phero > img{object-position:center 62%}
 .collage .c1 img{object-position:center 75%}
+.open-line{margin:0;padding:14px 0;border-top:3px solid var(--rule-strong);border-bottom:1px solid var(--rule);font-size:1.05rem}
+.open-line b{font:700 .8rem/1 var(--label);letter-spacing:.14em;text-transform:uppercase;margin-right:12px}
+/* no overlapping elements: photos side by side, captions under their photo */
+.split .media:has(.inset){display:grid;grid-template-columns:3fr 2fr;gap:20px;align-items:end;margin-bottom:0}
+.split .media:has(.inset)>img{grid-column:1}
+.inset,.inset.taped{position:relative;inset:auto;width:auto;right:auto;bottom:auto;transform:none;border:0;margin:0}
+.inset figcaption{position:static;margin-top:10px;transform:none}
+.collage{display:grid;grid-template-columns:3fr 2fr;gap:20px;align-items:end;min-height:0}
+.collage figure,.collage .c1,.collage .c2,.collage .c2.taped{position:relative;inset:auto;width:auto;height:auto;transform:none;border:0;overflow:visible}
+.collage .c1 img{aspect-ratio:4/5;height:auto}
+.collage .c2 figcaption{position:static;margin-top:10px;transform:none}
+@media (max-width:980px){.tabs{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;gap:0 22px}.tabs::-webkit-scrollbar{display:none}.tabs button{flex:none;margin-bottom:0}}
+.sh-media img[src*="gg_13"]{object-position:center 80%}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://feclazgites.com/"}, {"@type": "ListItem", "position": 2, "name": "Venir", "item": "https://feclazgites.com/contact.html"}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Combien de personnes peut accueillir le gîte ?", "acceptedAnswer": {"@type": "Answer", "text": "Le Repaire compte 7 appartements de 2 à 6 places, soit 35 couchages au total. Vous pouvez louer un seul appartement ou le gîte entier avec la grande salle, la cuisine collective et la salle d'activité."}}, {"@type": "Question", "name": "Le gîte est-il ouvert toute l'année ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui, été comme hiver, à la nuitée, au week-end ou à la semaine, en gestion libre, demi-pension ou pension complète."}}, {"@type": "Question", "name": "Quels sont les tarifs ?", "acceptedAnswer": {"@type": "Answer", "text": "Un appartement 2 places coûte 60 € la première nuit et 300 € la semaine. Le gîte entier en gestion libre est à 1 700 € la première nuit. La pension complète est à 78 € par adulte et 68 € par enfant. Tous les tarifs sont sur la page du gîte."}}, {"@type": "Question", "name": "Peut-on réserver le spa sans dormir au gîte ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui. Le jacuzzi et le sauna se réservent à l'heure : 25 € par personne et par heure hors gîte, 20 € pour les clients du gîte, jusqu'à 6 personnes."}}, {"@type": "Question", "name": "Quand la crêperie est-elle ouverte ?", "acceptedAnswer": {"@type": "Answer", "text": "Pendant les saisons d'été et d'hiver, tous les jours de 12 h à 20 h 30 en service continu. L'hiver, le salon de thé ouvre à partir de 13 h 30. Hors saison, appelez le 07 78 21 41 78 avant de venir."}}, {"@type": "Question", "name": "Les animaux sont-ils acceptés ?", "acceptedAnswer": {"@type": "Answer", "text": "Les chiens sont les bienvenus à la crêperie. Pour le gîte, prévenez-nous à la réservation."}}, {"@type": "Question", "name": "Comment venir à La Féclaz ?", "acceptedAnswer": {"@type": "Answer", "text": "Le gîte est au 2348 route du Revard, à l'entrée de la station Savoie Grand Revard. Comptez 20 minutes depuis la gare de Chambéry, 25 minutes depuis Aix-les-Bains, 45 minutes depuis Annecy, 1 h 30 depuis Lyon et 2 h depuis Genève."}}, {"@type": "Question", "name": "Accueillez-vous les groupes, stages et séminaires ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui. La salle d'activité accueille stages de yoga, danse, sophrologie, ateliers cuisine et conférences. Les activités de la station permettent d'organiser séminaires et team-building."}}, {"@type": "Question", "name": "Les motards sont-ils les bienvenus ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui, le Repaire accueille régulièrement des groupes de motards, avec stationnement devant le gîte."}}]}</script>
@@ -705,8 +717,8 @@ footer li a,.alt-lines a{display:inline-block;padding-block:8px}
 <main>
 <section class="phero">
   <img src="img/gg_12.webp" srcset="img/gg_12_s.webp 640w, img/gg_12.webp 1600w" sizes="100vw" width="1600" height="1200" alt="Le gîte Le Repaire en été" fetchpriority="high" decoding="async">
-  <div class="wrap"><nav class="crumbs" aria-label="Fil d'Ariane"><ol><li><a href="index.html">Accueil</a></li><li aria-current="page">Venir</li></ol></nav><h1>Venir</h1>
-    <div class="phero-foot"><p class="lead">À l'entrée de la station, au bord de la route du Revard : cherchez le panneau orange « Gîte Le Repaire ».</p><ul class="facts"><li><b>20 min</b><span>de Chambéry</span></li><li><b>25 min</b><span>d&#x27;Aix-les-Bains</span></li><li><b>45 min</b><span>d&#x27;Annecy</span></li></ul></div>
+  <div class="wrap"><h1>Venir</h1>
+    <div class="phero-foot"><p class="lead">À l'entrée de la station, au bord de la route du Revard : cherchez le panneau orange « Gîte Le Repaire ».</p><ul class="facts"></ul></div>
     <a class="scroll-cue" href="#suite">Découvrir<span aria-hidden="true">↓</span></a></div>
   <svg class="ridge to-night" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true"><path d="M0,120 L0,44.6 L22,49.9 L45,53.6 L68,59.4 L90,68.8 L112,77.3 L135,79.8 L158,76.5 L180,72.8 L202,72.3 L225,72.6 L248,70.2 L270,66.4 L292,65.8 L315,69.9 L338,74.3 L360,73.6 L382,68.5 L405,63.9 L428,62.5 L450,61.8 L472,58.6 L495,54.7 L518,55.5 L540,62.1 L562,69.8 L585,73.2 L608,72.6 L630,72.2 L652,73.6 L675,73.5 L698,68.8 L720,62.0 L742,58.9 L765,60.9 L788,63.6 L810,62.2 L832,57.4 L855,53.5 L878,51.3 L900,46.9 L922,37.6 L945,26.5 L968,19.9 L990,19.5 L1012,21.1 L1035,20.8 L1058,19.7 L1080,21.8 L1102,26.8 L1125,29.8 L1148,27.7 L1170,23.5 L1192,23.1 L1215,27.8 L1238,33.6 L1260,37.0 L1282,39.8 L1305,45.8 L1328,54.0 L1350,59.0 L1372,57.2 L1395,52.0 L1418,48.9 L1440,49.2 L1440,120 Z"/></svg>
 </section><div id="suite"></div><section class="on-dark" id="contact">
@@ -717,7 +729,7 @@ footer li a,.alt-lines a{display:inline-block;padding-block:8px}
         <a class="bigtel" href="tel:+33778214178">07 78 21 41 78</a>
         <div class="alt-lines">
           <span><a href="tel:+33615180081">06 15 18 00 81</a></span>
-          <span><a href="mailto:feclazgites@feclazgites.com">feclazgites@feclazgites.com</a><button class="copy-btn" data-copy="feclazgites@feclazgites.com">Copier</button></span>
+          <span><a href="mailto:feclazgites@feclazgites.com">feclazgites@feclazgites.com</a></span>
           <span>2348 route du Revard, La Féclaz, 73230 Les Déserts</span>
         </div>
         <div class="ctas" style="margin-top:30px"><a class="btn" href="https://www.google.com/maps/dir/?api=1&destination=45.642364,5.993623" target="_blank" rel="noopener"><span>Itinéraire</span></a></div>
@@ -730,7 +742,7 @@ footer li a,.alt-lines a{display:inline-block;padding-block:8px}
           <li>Lyon<i></i><b>1 h 30</b></li>
           <li>Genève<i></i><b>2 h</b></li>
         </ul>
-        <p class="moto"><img src="img/bike.webp" width="500" height="335" alt="" loading="lazy"><span>En moto ou autrement. Pour vos road trips dans les Alpes, on aime bien l'appli GPS <a href="https://app68.eu/" target="_blank" rel="noopener">app68</a>.</span></p>
+        <p class="moto"><img src="img/bike.webp" width="500" height="335" alt="" loading="lazy"><span>À moto ? Pour vos road trips dans les Alpes, on vous conseille l'appli GPS <a href="https://app68.eu/" target="_blank" rel="noopener">app68</a>.</span></p>
       </div>
     </div>
     <figure class="embed live rv"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4000!2d5.993623!3d45.642364!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478ba430aa4362d1%3A0x350b0cc08b1ad16d!2sLe%20Repaire%20de%20La%20F%C3%A9claz!5e0!3m2!1sfr!2sfr!4v1760000000000!5m2!1sfr!2sfr" title="Carte Google Maps du Repaire de La Féclaz" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe><figcaption><b>Le Repaire</b> 2348 route du Revard, La Féclaz <a class="arrow" href="https://www.google.com/maps/dir/?api=1&destination=45.642364,5.993623" target="_blank" rel="noopener">Itinéraire</a></figcaption></figure>
@@ -937,14 +949,6 @@ if (ask) {
     location.href = `mailto:${ask.dataset.to}?subject=${encodeURIComponent('Demande de séjour du ' + fr(v('#f-arr')) + ' au ' + fr(v('#f-dep')))}&body=${encodeURIComponent(body)}`;
   });
 }
-
-// copy buttons
-$$('[data-copy]').forEach(b => b.addEventListener('click', () => {
-  const t = b.dataset.copy, label = b.textContent;
-  (navigator.clipboard ? navigator.clipboard.writeText(t) : Promise.reject())
-    .then(() => { b.textContent = 'Copié'; setTimeout(() => b.textContent = label, 1600); })
-    .catch(() => { const r = document.createRange(); r.selectNodeContents(b.previousElementSibling || b); getSelection().removeAllRanges(); getSelection().addRange(r); });
-}));
 
 // gallery: first photos only until asked
 const showAll = $('#showAll');

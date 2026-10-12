@@ -408,7 +408,6 @@ section{padding-block:clamp(80px,11vw,160px)}
 .alt-lines{display:grid;gap:6px;margin-top:22px;font-size:1.1rem}
 .alt-lines a{text-decoration:none;border-bottom:1px solid var(--night-rule)}
 .alt-lines a:hover{border-color:currentColor}
-.copy-btn{all:unset;cursor:pointer;display:inline-flex;align-items:center;min-height:44px;margin-left:14px;font:600 .75rem/1 var(--label);letter-spacing:.14em;text-transform:uppercase;color:var(--on-night-muted);border-bottom:1px solid currentColor}
 .routes{list-style:none;margin:0;padding:0;border-top:3px solid currentColor}
 .routes li{display:flex;align-items:baseline;gap:12px;padding:12px 0;border-bottom:1px solid var(--night-rule)}
 .routes i{flex:1;border-bottom:2px dotted currentColor;opacity:.3;transform:translateY(-4px)}
@@ -687,6 +686,19 @@ footer li a,.alt-lines a{display:inline-block;padding-block:8px}
 @media (max-width:600px){.spa-photos{grid-template-columns:1fr 1fr}}
 .phero > img{object-position:center 62%}
 .collage .c1 img{object-position:center 75%}
+.open-line{margin:0;padding:14px 0;border-top:3px solid var(--rule-strong);border-bottom:1px solid var(--rule);font-size:1.05rem}
+.open-line b{font:700 .8rem/1 var(--label);letter-spacing:.14em;text-transform:uppercase;margin-right:12px}
+/* no overlapping elements: photos side by side, captions under their photo */
+.split .media:has(.inset){display:grid;grid-template-columns:3fr 2fr;gap:20px;align-items:end;margin-bottom:0}
+.split .media:has(.inset)>img{grid-column:1}
+.inset,.inset.taped{position:relative;inset:auto;width:auto;right:auto;bottom:auto;transform:none;border:0;margin:0}
+.inset figcaption{position:static;margin-top:10px;transform:none}
+.collage{display:grid;grid-template-columns:3fr 2fr;gap:20px;align-items:end;min-height:0}
+.collage figure,.collage .c1,.collage .c2,.collage .c2.taped{position:relative;inset:auto;width:auto;height:auto;transform:none;border:0;overflow:visible}
+.collage .c1 img{aspect-ratio:4/5;height:auto}
+.collage .c2 figcaption{position:static;margin-top:10px;transform:none}
+@media (max-width:980px){.tabs{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;gap:0 22px}.tabs::-webkit-scrollbar{display:none}.tabs button{flex:none;margin-bottom:0}}
+.sh-media img[src*="gg_13"]{object-position:center 80%}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://feclazgites.com/"}, {"@type": "ListItem", "position": 2, "name": "La station", "item": "https://feclazgites.com/station.html"}]}</script>
 </head>
@@ -704,14 +716,14 @@ footer li a,.alt-lines a{display:inline-block;padding-block:8px}
 <main>
 <section class="phero">
   <img src="img/paysage.webp" srcset="img/paysage_s.webp 640w, img/paysage.webp 2000w" sizes="100vw" width="2000" height="1200" alt="Mélèzes d&#x27;automne et sommets enneigés" fetchpriority="high" decoding="async">
-  <div class="wrap"><nav class="crumbs" aria-label="Fil d'Ariane"><ol><li><a href="index.html">Accueil</a></li><li aria-current="page">La station</li></ol></nav><h1>La station</h1>
+  <div class="wrap"><h1>La station</h1>
     <div class="phero-foot"><p class="lead">Savoie Grand Revard, sur le plateau des Bauges. Ski de fond l'hiver, rando et VTT l'été, depuis la porte du gîte.</p><ul class="facts"><li><b>150 km</b><span>de ski nordique</span></li><li><b>50 km</b><span>de ski alpin</span></li></ul></div>
     <a class="scroll-cue" href="#suite">Découvrir<span aria-hidden="true">↓</span></a></div>
   <svg class="ridge to-night" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true"><path d="M0,120 L0,57.0 L22,57.1 L45,58.6 L68,56.4 L90,47.9 L112,37.0 L135,29.6 L158,26.6 L180,24.0 L202,19.7 L225,16.7 L248,18.7 L270,24.1 L292,27.1 L315,24.8 L338,20.9 L360,20.5 L382,23.6 L405,26.4 L428,27.1 L450,29.5 L472,37.1 L495,47.9 L518,55.6 L540,57.3 L562,56.2 L585,56.7 L608,58.5 L630,57.5 L652,53.2 L675,50.1 L698,52.5 L720,58.5 L742,62.3 L765,61.3 L788,58.8 L810,58.7 L832,59.7 L855,57.8 L878,52.7 L900,49.7 L922,53.2 L945,61.1 L968,67.8 L990,71.0 L1012,73.8 L1035,78.9 L1058,83.9 L1080,84.1 L1102,79.3 L1125,75.0 L1148,75.5 L1170,79.1 L1192,80.6 L1215,78.6 L1238,76.7 L1260,77.3 L1282,77.2 L1305,71.5 L1328,60.6 L1350,50.0 L1372,44.3 L1395,41.9 L1418,38.6 L1440,34.0 L1440,120 Z"/></svg>
-</section><div id="suite"></div><section class="two-seasons"><article class="season winter"><img src="img/gg_01.webp" srcset="img/gg_01_s.webp 640w, img/gg_01.webp 1600w" sizes="(max-width:860px) 100vw, 50vw" width="1600" height="739" alt="Le village de La Féclaz sous la neige à la tombée du jour" loading="lazy" decoding="async"><div><h2>L'hiver</h2><p>Plus de 150 km de pistes de ski nordique à travers la forêt, 50 km de ski alpin familial entre La Féclaz et Le Revard, et un pas de tir de biathlon aux normes internationales.</p><ul><li>Ski nordique</li><li>Ski alpin</li><li>Raquettes</li><li>Chiens de traîneau</li><li>Ski-joëring</li><li>Luge</li><li>Biathlon</li></ul></div></article><article class="season summer"><img src="img/gite_032.webp" srcset="img/gite_032_s.webp 640w, img/gite_032.webp 1020w" sizes="(max-width:860px) 100vw, 50vw" width="1020" height="572" alt="Rassemblement de motos devant le gîte un jour d&#x27;été" loading="lazy" decoding="async"><div><h2>L'été</h2><p>Les sentiers du Parc naturel régional des Bauges, les falaises et les rivières. Le lac du Bourget est à 25 minutes.</p><ul><li>Randonnée</li><li>VTT</li><li>Via ferrata</li><li>Escalade</li><li>Parapente</li><li>Canyoning</li><li>Accrobranche</li></ul></div></article></section><section>
+</section><div id="suite"></div><section class="two-seasons"><article class="season winter"><img src="img/gg_01.webp" srcset="img/gg_01_s.webp 640w, img/gg_01.webp 1591w" sizes="(max-width:860px) 100vw, 50vw" width="1591" height="739" alt="Le village de La Féclaz sous la neige à la tombée du jour" loading="lazy" decoding="async"><div><h2>L'hiver</h2><p>Plus de 150 km de pistes de ski nordique à travers la forêt, 50 km de ski alpin familial entre La Féclaz et Le Revard, et un pas de tir de biathlon aux normes internationales.</p><ul><li>Ski nordique</li><li>Ski alpin</li><li>Raquettes</li><li>Chiens de traîneau</li><li>Ski-joëring</li><li>Luge</li><li>Biathlon</li></ul></div></article><article class="season summer"><img src="img/gite_032.webp" srcset="img/gite_032_s.webp 640w, img/gite_032.webp 1020w" sizes="(max-width:860px) 100vw, 50vw" width="1020" height="572" alt="Rassemblement de motos devant le gîte un jour d&#x27;été" loading="lazy" decoding="async"><div><h2>L'été</h2><p>Les sentiers du Parc naturel régional des Bauges, les falaises et les rivières. Le lac du Bourget est à 25 minutes.</p><ul><li>Randonnée</li><li>VTT</li><li>Via ferrata</li><li>Escalade</li><li>Parapente</li><li>Canyoning</li><li>Accrobranche</li></ul></div></article></section><section>
   <div class="wrap split">
     <div class="copy rv side-title"><h2>Depuis le gîte</h2><p class="lead muted" style="margin-top:20px">On laisse la voiture, on chausse les skis ou les chaussures de rando, et on part de la porte.</p></div>
-    <ul class="routes light rv side-spec"><li>Pistes de ski de fond<i></i><b>350 m</b></li><li>Station de La Féclaz<i></i><b>10 min à pied</b></li><li>Centre équestre Volte-Face<i></i><b>par les chemins</b></li><li>Aix-les-Bains et ses thermes<i></i><b>25 min</b></li><li>Chambéry et le château des Ducs<i></i><b>20 min</b></li><li>Annecy et son lac<i></i><b>45 min</b></li></ul>
+    <ul class="routes light rv side-spec"><li>Pistes de ski de fond<i></i><b>350 m</b></li><li>Station de La Féclaz<i></i><b>10 min à pied</b></li><li>Chambéry et le château des Ducs<i></i><b>20 min</b></li><li>Aix-les-Bains et ses thermes<i></i><b>25 min</b></li><li>Annecy et son lac<i></i><b>45 min</b></li></ul>
   </div>
 </section><section style="padding-top:0"><div class="wrap"><div class="season-cols" style="grid-template-columns:repeat(auto-fit,minmax(260px,1fr));margin-top:0">
   <div class="rv"><h3>Les pistes</h3><p class="linklist">
@@ -911,14 +923,6 @@ if (ask) {
     location.href = `mailto:${ask.dataset.to}?subject=${encodeURIComponent('Demande de séjour du ' + fr(v('#f-arr')) + ' au ' + fr(v('#f-dep')))}&body=${encodeURIComponent(body)}`;
   });
 }
-
-// copy buttons
-$$('[data-copy]').forEach(b => b.addEventListener('click', () => {
-  const t = b.dataset.copy, label = b.textContent;
-  (navigator.clipboard ? navigator.clipboard.writeText(t) : Promise.reject())
-    .then(() => { b.textContent = 'Copié'; setTimeout(() => b.textContent = label, 1600); })
-    .catch(() => { const r = document.createRange(); r.selectNodeContents(b.previousElementSibling || b); getSelection().removeAllRanges(); getSelection().addRange(r); });
-}));
 
 // gallery: first photos only until asked
 const showAll = $('#showAll');

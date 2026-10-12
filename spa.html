@@ -408,7 +408,6 @@ section{padding-block:clamp(80px,11vw,160px)}
 .alt-lines{display:grid;gap:6px;margin-top:22px;font-size:1.1rem}
 .alt-lines a{text-decoration:none;border-bottom:1px solid var(--night-rule)}
 .alt-lines a:hover{border-color:currentColor}
-.copy-btn{all:unset;cursor:pointer;display:inline-flex;align-items:center;min-height:44px;margin-left:14px;font:600 .75rem/1 var(--label);letter-spacing:.14em;text-transform:uppercase;color:var(--on-night-muted);border-bottom:1px solid currentColor}
 .routes{list-style:none;margin:0;padding:0;border-top:3px solid currentColor}
 .routes li{display:flex;align-items:baseline;gap:12px;padding:12px 0;border-bottom:1px solid var(--night-rule)}
 .routes i{flex:1;border-bottom:2px dotted currentColor;opacity:.3;transform:translateY(-4px)}
@@ -687,6 +686,19 @@ footer li a,.alt-lines a{display:inline-block;padding-block:8px}
 @media (max-width:600px){.spa-photos{grid-template-columns:1fr 1fr}}
 .phero > img{object-position:center 62%}
 .collage .c1 img{object-position:center 75%}
+.open-line{margin:0;padding:14px 0;border-top:3px solid var(--rule-strong);border-bottom:1px solid var(--rule);font-size:1.05rem}
+.open-line b{font:700 .8rem/1 var(--label);letter-spacing:.14em;text-transform:uppercase;margin-right:12px}
+/* no overlapping elements: photos side by side, captions under their photo */
+.split .media:has(.inset){display:grid;grid-template-columns:3fr 2fr;gap:20px;align-items:end;margin-bottom:0}
+.split .media:has(.inset)>img{grid-column:1}
+.inset,.inset.taped{position:relative;inset:auto;width:auto;right:auto;bottom:auto;transform:none;border:0;margin:0}
+.inset figcaption{position:static;margin-top:10px;transform:none}
+.collage{display:grid;grid-template-columns:3fr 2fr;gap:20px;align-items:end;min-height:0}
+.collage figure,.collage .c1,.collage .c2,.collage .c2.taped{position:relative;inset:auto;width:auto;height:auto;transform:none;border:0;overflow:visible}
+.collage .c1 img{aspect-ratio:4/5;height:auto}
+.collage .c2 figcaption{position:static;margin-top:10px;transform:none}
+@media (max-width:980px){.tabs{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;gap:0 22px}.tabs::-webkit-scrollbar{display:none}.tabs button{flex:none;margin-bottom:0}}
+.sh-media img[src*="gg_13"]{object-position:center 80%}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://feclazgites.com/"}, {"@type": "ListItem", "position": 2, "name": "Le spa", "item": "https://feclazgites.com/spa.html"}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "DaySpa", "@id": "https://feclazgites.com/#spa", "name": "Spa du Repaire", "url": "https://feclazgites.com/spa.html", "telephone": "+33 7 78 21 41 78", "address": {"@type": "PostalAddress", "streetAddress": "2348 route du Revard", "addressLocality": "Les Déserts", "postalCode": "73230", "addressRegion": "Savoie", "addressCountry": "FR"}, "geo": {"@type": "GeoCoordinates", "latitude": 45.642364, "longitude": 5.993623}, "priceRange": "€€", "image": "https://feclazgites.com/img/spa_05.webp", "parentOrganization": {"@id": "https://feclazgites.com/#repaire"}}</script>
@@ -704,7 +716,7 @@ footer li a,.alt-lines a{display:inline-block;padding-block:8px}
 </header>
 <main>
 <section class="phero split-hero">
-  <div class="wrap"><div class="sh-copy"><nav class="crumbs" aria-label="Fil d'Ariane"><ol><li><a href="index.html">Accueil</a></li><li aria-current="page">Le spa</li></ol></nav><h1>Le spa</h1><p class="lead">Pendant votre heure, le jacuzzi et le sauna sont à vous seuls. Jusqu'à six personnes.</p><ul class="facts"><li><b>dès 20 €</b><span>par personne et par heure</span></li><li><b>6</b><span>personnes au plus</span></li></ul>
+  <div class="wrap"><div class="sh-copy"><h1>Le spa</h1><p class="lead">Jacuzzi et sauna privatisés, à l'heure ou à la journée. Ouvert aussi à ceux qui ne dorment pas au gîte.</p><ul class="facts"><li><b>dès 20 €</b><span>par personne et par heure</span></li><li><b>6</b><span>personnes au plus</span></li></ul>
     <a class="scroll-cue" href="#suite">Découvrir<span aria-hidden="true">↓</span></a></div>
   <figure class="sh-media"><img src="img/spa_05.webp" srcset="img/spa_05_s.webp 640w, img/spa_05.webp 1020w" sizes="(max-width:860px) 100vw, 55vw" width="1020" height="680" alt="Le jacuzzi du spa sous un triptyque de montagne" fetchpriority="high" decoding="async"></figure></div>
 </section><div id="suite"></div><section class="on-dark" id="spa">
@@ -712,14 +724,14 @@ footer li a,.alt-lines a{display:inline-block;padding-block:8px}
     <div class="spa-top">
       <div class="rv" style="display:grid;gap:24px">
         <h2>Une heure, rien que vous</h2>
-        <p class="lead muted">Jacuzzi devant la fenêtre, sauna en bois, douche à l'italienne. Le spa est privatisé pendant votre créneau, jusqu'à six personnes. Les visiteurs sont les bienvenus, même sans dormir au gîte.</p>
+        <p class="lead muted">Jacuzzi devant la fenêtre, sauna en bois, douche à l'italienne. Le spa est privatisé pendant votre créneau. Les visiteurs sont les bienvenus, même sans dormir au gîte.</p>
         
       </div>
-      <ul class="rates rv"><li><span>Client du gîte <em class="muted">par personne, par heure</em></span><i></i><b>20 €</b></li><li><span>Visiteur <em class="muted">par personne, par heure</em></span><i></i><b>25 €</b></li><li><span>Accès à la journée <em class="muted">de 10 h à 19 h</em></span><i></i><b>250 €</b></li><li><span>Gestion libre <em class="muted">le week-end</em></span><i></i><b>300 €</b></li><li><span>Gestion libre <em class="muted">la semaine</em></span><i></i><b>450 €</b></li></ul>
+      <ul class="rates rv"><li><span>Client du gîte <em class="muted">par personne, par heure</em></span><i></i><b>20 €</b></li><li><span>Visiteur <em class="muted">par personne, par heure</em></span><i></i><b>25 €</b></li><li><span>Accès à la journée <em class="muted">de 10 h à 19 h</em></span><i></i><b>250 €</b></li><li><span>Accès libre <em class="muted">tout le week-end</em></span><i></i><b>300 €</b></li><li><span>Accès libre <em class="muted">toute la semaine</em></span><i></i><b>450 €</b></li></ul>
     </div>
     <div class="masonry spa-photos"><button data-g="spa"><img src="img/spa_03.webp" srcset="img/spa_03_s.webp 640w, img/spa_03.webp 1020w" sizes="(max-width:600px) 100vw, 33vw" width="1020" height="680" alt="Le jacuzzi face à la fenêtre et à la forêt" loading="lazy" decoding="async"></button><button data-g="spa"><img src="img/spa_06.webp" srcset="img/spa_06_s.webp 453w, img/spa_06.webp 453w" sizes="(max-width:600px) 100vw, 33vw" width="453" height="680" alt="Le sauna en bois" loading="lazy" decoding="async"></button><button data-g="spa"><img src="img/spa_04.webp" srcset="img/spa_04_s.webp 640w, img/spa_04.webp 1020w" sizes="(max-width:600px) 100vw, 33vw" width="1020" height="680" alt="Bain à remous et porte du sauna" loading="lazy" decoding="async"></button><button data-g="spa"><img src="img/spa_07.webp" srcset="img/spa_07_s.webp 640w, img/spa_07.webp 1020w" sizes="(max-width:600px) 100vw, 33vw" width="1020" height="680" alt="Douche à l&#x27;italienne et jacuzzi" loading="lazy" decoding="async"></button><button data-g="spa"><img src="img/spa_01.webp" srcset="img/spa_01_s.webp 640w, img/spa_01.webp 1020w" sizes="(max-width:600px) 100vw, 33vw" width="1020" height="680" alt="Le vestiaire en bois" loading="lazy" decoding="async"></button><button data-g="spa"><img src="img/spa_02.webp" srcset="img/spa_02_s.webp 640w, img/spa_02.webp 1020w" sizes="(max-width:600px) 100vw, 33vw" width="1020" height="680" alt="L&#x27;entrée du spa, porte et vasque en pierre" loading="lazy" decoding="async"></button></div>
   </div>
-</section><section><div class="wrap"><div class="split"><div class="copy rv side-title"><h2>Pratique</h2></div><dl class="spec rv side-spec"><div><dt>Capacité</dt><dd>Jusqu'à 6 personnes à la fois</dd></div><div><dt>Équipement</dt><dd>Jacuzzi, sauna, douche à l'italienne, vestiaire</dd></div><div><dt>Exemple</dt><dd>Deux personnes, une heure : <b>40 €</b> pour les clients du gîte, <b>50 €</b> pour les visiteurs</dd></div><div><dt>Accès</dt><dd>Sur réservation, pour les clients du gîte comme pour les visiteurs</dd></div><div><dt>Réserver</dt><dd><a href="tel:+33778214178">07 78 21 41 78</a></dd></div></dl></div></div></section><section class="book-bar on-dark"><div class="wrap">
+</section><section><div class="wrap"><div class="split"><div class="copy rv side-title"><h2>Pratique</h2></div><dl class="spec rv side-spec"><div><dt>Capacité</dt><dd>Jusqu'à 6 personnes à la fois</dd></div><div><dt>Équipement</dt><dd>Jacuzzi, sauna, douche à l'italienne, vestiaire</dd></div><div><dt>Exemple</dt><dd>Deux personnes, une heure : <b>40&nbsp;€</b> pour les clients du gîte, <b>50&nbsp;€</b> pour les visiteurs</dd></div><div><dt>Accès</dt><dd>Sur réservation, par téléphone</dd></div></dl></div></div></section><section class="book-bar on-dark"><div class="wrap">
   <p><b>Réserver</b> <a href="tel:+33778214178">07 78 21 41 78</a> <a href="mailto:feclazgites@feclazgites.com">feclazgites@feclazgites.com</a></p>
   <div class="ctas"><a class="btn" href="contact.html#demande"><span>Demander un séjour</span></a><a class="arrow" href="https://www.google.com/maps/dir/?api=1&destination=45.642364,5.993623" target="_blank" rel="noopener">Itinéraire</a></div>
 </div></section>
@@ -903,14 +915,6 @@ if (ask) {
     location.href = `mailto:${ask.dataset.to}?subject=${encodeURIComponent('Demande de séjour du ' + fr(v('#f-arr')) + ' au ' + fr(v('#f-dep')))}&body=${encodeURIComponent(body)}`;
   });
 }
-
-// copy buttons
-$$('[data-copy]').forEach(b => b.addEventListener('click', () => {
-  const t = b.dataset.copy, label = b.textContent;
-  (navigator.clipboard ? navigator.clipboard.writeText(t) : Promise.reject())
-    .then(() => { b.textContent = 'Copié'; setTimeout(() => b.textContent = label, 1600); })
-    .catch(() => { const r = document.createRange(); r.selectNodeContents(b.previousElementSibling || b); getSelection().removeAllRanges(); getSelection().addRange(r); });
-}));
 
 // gallery: first photos only until asked
 const showAll = $('#showAll');
