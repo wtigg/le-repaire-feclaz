@@ -7,8 +7,8 @@
 <meta name="description" content="7 appartements de 2 à 6 places, gîte entier jusqu&#x27;à 35 couchages à La Féclaz. Tarifs, photos des chambres, visite 360°, gestion libre ou pension.">
 <link rel="canonical" href="https://feclazgites.com/gite.html">
 <meta name="robots" content="noindex,nofollow">
-<meta name="theme-color" content="#EEF0EB" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#101411" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#EEF0EB">
+<meta name="color-scheme" content="light">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="Le Repaire de La Féclaz">
@@ -117,12 +117,6 @@
   --gutter:clamp(16px,4.5vw,56px);
   --bar:68px;
 }
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
-  --snow:#121613;--paper:#1A1F1B;--ink:#E9ECE6;--muted:#9AA39B;--rule:rgba(233,236,230,.14);--rule-strong:#E9ECE6;
-  --ember:#EF7337;--ember-ink:#160B04;--wood:#C8955F;--night:#0A0D0B;color-scheme:dark}}
-:root[data-theme="dark"]{
-  --snow:#121613;--paper:#1A1F1B;--ink:#E9ECE6;--muted:#9AA39B;--rule:rgba(233,236,230,.14);--rule-strong:#E9ECE6;
-  --ember:#EF7337;--ember-ink:#160B04;--wood:#C8955F;--night:#0A0D0B;color-scheme:dark}
 
 *{box-sizing:border-box}
 [hidden]{display:none!important}
@@ -210,11 +204,12 @@ section{padding-block:clamp(80px,11vw,160px)}
 @media (max-width:860px){.hero-foot{grid-template-columns:1fr}.coords{display:none}}
 
 /* inner page hero */
-.phero{position:relative;min-height:clamp(420px,58svh,600px);display:flex;align-items:flex-end;color:#fff;background:#0b0f0c;overflow:hidden;padding:0}
+.phero{position:relative;min-height:clamp(380px,56svh,560px);display:flex;align-items:flex-end;color:#fff;background:#0b0f0c;overflow:hidden;padding:0}
 .phero > img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.phero::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(8,11,9,.5),rgba(8,11,9,.05) 35%,rgba(8,11,9,.72))}
+.phero::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(8,11,9,.5),rgba(8,11,9,.1) 35%,rgba(8,11,9,.85))}
+.phero .lead{text-shadow:0 1px 12px rgba(0,0,0,.35)}
 .phero .wrap{position:relative;z-index:3;width:100%;padding-top:calc(var(--bar) + 30px);padding-bottom:clamp(70px,9vw,130px)}
-.phero h1{font-size:clamp(4rem,12vw,10.5rem);font-weight:900;line-height:.8}
+.phero h1{font-size:clamp(3.6rem,9vw,8rem);font-weight:900;line-height:.82}
 .phero .lead{margin-top:20px;color:#E5EBE6}
 .crumbs ol{list-style:none;margin:0 0 18px;padding:0;display:flex;gap:10px;font:600 .8rem/1 var(--label);letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.75)}
 .crumbs li+li::before{content:"/";margin-right:10px;opacity:.6}
@@ -400,8 +395,6 @@ section{padding-block:clamp(80px,11vw,160px)}
 .hosts > *{min-width:0}
 .hosts .pair{display:flex;justify-content:center;height:clamp(260px,34vw,440px)}
 .hosts .pair img{height:100%;width:auto;mix-blend-mode:multiply}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .hosts .pair img{mix-blend-mode:screen;filter:invert(1)}}
-:root[data-theme="dark"] .hosts .pair img{mix-blend-mode:screen;filter:invert(1)}
 .hosts .letter{display:grid;gap:22px}
 .hosts .sign{font-size:clamp(2rem,3vw,2.8rem);color:var(--wood)}
 @media (max-width:860px){.hosts{grid-template-columns:1fr}}
@@ -525,8 +518,6 @@ footer .legal-line{display:flex;flex-wrap:wrap;justify-content:space-between;gap
 
 /* additions after review */
 .brand img{width:40px;height:auto}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .bar.solid .brand img,:root:not([data-theme="light"]) .bar.always .brand img{background:#F3F1EA;border-radius:50%;padding:3px}}
-:root[data-theme="dark"] .bar.solid .brand img,:root[data-theme="dark"] .bar.always .brand img{background:#F3F1EA;border-radius:50%;padding:3px}
 .show-all{margin-top:22px}
 .masonry.clip button.late{display:none}
 .acts .row.no-img{grid-template-columns:minmax(0,1fr) auto}
@@ -577,7 +568,7 @@ footer .legal-line{display:flex;flex-wrap:wrap;justify-content:space-between;gap
 .scroll-cue{position:absolute;right:var(--gutter);bottom:clamp(70px,9vw,130px);display:none}
 .phero .wrap{position:relative}
 .scroll-cue{position:static;display:inline-flex;align-items:center;gap:10px;margin-top:26px;font:700 .85rem/1 var(--label);letter-spacing:.16em;text-transform:uppercase;text-decoration:none;color:#fff}
-.scroll-cue span{display:inline-grid;place-items:center;width:34px;height:34px;border:1.5px solid rgba(255,255,255,.7);border-radius:50%;animation:nudge 1.8s ease-in-out infinite}
+.scroll-cue span{display:inline-grid;place-items:center;width:34px;height:34px;border:1.5px solid rgba(255,255,255,.7);border-radius:50%;animation:nudge 1.6s ease-in-out 1s 3}
 @keyframes nudge{0%,100%{transform:translateY(0)}50%{transform:translateY(5px)}}
 @media (max-width:860px){.phero-foot{grid-template-columns:1fr}.facts li{padding-right:16px;margin-right:16px}}
 @media (max-width:420px){.facts b{font-size:1.5rem}.facts span{font-size:.66rem}}
@@ -613,6 +604,89 @@ footer .legal-line{display:flex;flex-wrap:wrap;justify-content:space-between;gap
 .routes.light{border-top-color:var(--rule-strong)}
 .routes.light li{border-bottom-color:var(--rule)}
 .routes.light li{font-size:1.1rem}
+
+/* ---- crit 2 ---- */
+/* split hero (spa): photo kept at a size it can carry */
+.phero.split-hero{min-height:0;display:block;background:var(--night);color:var(--on-night);padding:calc(var(--bar) + 30px) 0 clamp(50px,7vw,90px)}
+.phero.split-hero::after{display:none}
+.phero.split-hero .wrap{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(28px,5vw,70px);align-items:end;padding:0 var(--gutter)}
+.sh-copy{display:grid;gap:20px;padding-bottom:10px}
+.sh-copy .lead{text-shadow:none;color:var(--on-night-muted);margin:0}
+.sh-copy .facts{border-top-color:var(--night-rule)}
+.sh-copy .facts li{border-right-color:var(--night-rule)}
+.sh-copy .facts span{color:var(--on-night-muted)}
+.sh-media{margin:0;max-width:900px}
+.sh-media img{width:100%;aspect-ratio:4/3;object-fit:cover}
+@media (max-width:860px){.phero.split-hero .wrap{grid-template-columns:1fr}.sh-media{order:-1}}
+
+/* taped photos, like the owners' scrapbook */
+.taped{background:var(--paper);padding:10px 10px 0;box-shadow:0 22px 40px -24px rgba(0,0,0,.45)}
+.taped img{display:block}
+.taped figcaption{font-size:1.35rem;color:var(--wood);text-align:center;padding:6px 0 8px}
+.taped::before,.taped::after{content:"";position:absolute;width:64px;height:20px;background:rgba(240,226,200,.85);box-shadow:0 1px 2px rgba(0,0,0,.08);z-index:2}
+.taped::before{top:-9px;left:14%;transform:rotate(-5deg)}
+.taped::after{top:-9px;right:14%;transform:rotate(4deg)}
+.inset.taped{border:0;box-shadow:0 22px 40px -24px rgba(0,0,0,.45);transform:rotate(2deg)}
+.collage .c2.taped{border:0;aspect-ratio:auto;overflow:visible}
+.collage .c2.taped img{aspect-ratio:1;height:auto}
+
+/* concert poster */
+.concert-media{position:relative}
+.poster{position:absolute;width:38%;right:-6%;bottom:-12%;transform:rotate(3deg);margin:0}
+@media (max-width:860px){.poster{right:2%;width:42%}.concert-media{margin-bottom:60px}}
+
+/* hero rating */
+.rating b{font:900 2.6rem/1 var(--poster)}
+.rating b small{font-size:.5em;opacity:.8}
+.score b sup{font-size:.32em;vertical-align:top;margin-left:4px;color:var(--muted)}
+
+/* spa photos */
+.spa-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:clamp(40px,6vw,70px)}
+.spa-row button,.spa-photos button{all:unset;cursor:pointer;overflow:hidden;display:block}
+.spa-row img{width:100%;aspect-ratio:4/3;object-fit:cover;transition:transform .8s ease}
+.spa-row button:hover img{transform:scale(1.04)}
+.spa-row button:focus-visible,.spa-photos button:focus-visible{outline:3px solid var(--ember-on-night);outline-offset:-3px}
+.spa-photos{margin-top:clamp(40px,6vw,70px)}
+@media (max-width:700px){.spa-row{grid-template-columns:1fr 1fr}.spa-row button:first-child{grid-column:1/-1}}
+
+/* slim booking bar on inner pages */
+.book-bar{padding-block:clamp(36px,5vw,56px)}
+.book-bar .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:20px 40px}
+.book-bar p{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 26px;font-size:1.05rem}
+.book-bar p b{font:800 2rem/1 var(--poster);text-transform:uppercase}
+.book-bar p a{text-decoration:none;border-bottom:1px solid var(--night-rule);padding-block:8px}
+.book-bar p a:first-of-type{font:800 1.8rem/1 var(--poster);border:0}
+
+/* stay request form */
+.ask{display:grid;grid-template-columns:1fr 1fr;gap:16px 18px;border-top:3px solid var(--rule-strong);padding-top:24px}
+.ask label{display:grid;gap:6px;font:600 .78rem/1.2 var(--label);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.ask .wide{grid-column:1/-1}
+.ask input,.ask select,.ask textarea{font:400 1.05rem/1.4 var(--serif);color:var(--ink);background:var(--paper);border:1px solid var(--rule);border-bottom:2px solid var(--ink);padding:12px 12px;border-radius:0;min-height:48px;width:100%}
+.ask input:focus,.ask select:focus,.ask textarea:focus{outline:none;border-bottom-color:var(--ember);background:#fff}
+.ask .check{display:flex;align-items:center;gap:12px;font-size:.85rem;color:var(--ink);min-height:44px}
+.ask .check input{width:22px;height:22px;min-height:0;accent-color:var(--ember)}
+@media (max-width:520px){.ask{grid-template-columns:1fr}}
+
+/* footer: logo instead of outlined wordmark, bigger tap targets */
+.foot-logo{width:120px;height:auto;margin:clamp(40px,6vw,70px) auto 30px;opacity:.9}
+footer li a,.alt-lines a{display:inline-block;padding-block:8px}
+.ticks button{padding:20px 0}
+.ticks button[aria-pressed="true"]::after{top:20px}
+.split .copy{grid-column:8/span 5}
+.split.flip .copy{grid-column:1/span 5}
+.split.flip .media{grid-column:7/span 6}
+.split h2{font-size:clamp(2.8rem,4.6vw,5rem);overflow-wrap:break-word}
+@media (max-width:900px){.split .copy,.split.flip .copy,.split.flip .media{grid-column:1/-1}}
+.nav a.nav-call{min-height:48px;display:flex!important;align-items:center}
+.split .copy.side-title{grid-column:1/span 5}
+.split .side-spec{grid-column:7/span 6}
+@media (max-width:900px){.split .copy.side-title,.split .side-spec{grid-column:1/-1}}
+.spa-photos{columns:auto;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.spa-photos button{margin:0}
+.spa-photos img{aspect-ratio:4/3;object-fit:cover;height:auto}
+@media (max-width:600px){.spa-photos{grid-template-columns:1fr 1fr}}
+.phero > img{object-position:center 62%}
+.collage .c1 img{object-position:center 75%}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://feclazgites.com/"}, {"@type": "ListItem", "position": 2, "name": "Le gîte", "item": "https://feclazgites.com/gite.html"}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "LodgingBusiness", "@id": "https://feclazgites.com/#repaire", "name": "Le Repaire de La Féclaz", "alternateName": ["Gîte Le Repaire", "Crêperie- Gîte- SPA Le Repaire de La Féclaz"], "description": "Gîte de groupe et appartements meublés de 2 à 35 couchages à La Féclaz (Savoie Grand Revard), avec crêperie et spa (jacuzzi, sauna). Gestion libre, demi-pension ou pension complète, toute l'année.", "url": "https://feclazgites.com/", "telephone": "+33 7 78 21 41 78", "email": "feclazgites@feclazgites.com", "logo": "https://feclazgites.com/img/logo.png", "image": ["https://feclazgites.com/img/og.jpg", "https://feclazgites.com/img/gite_004.webp", "https://feclazgites.com/img/spa_05.webp"], "address": {"@type": "PostalAddress", "streetAddress": "2348 route du Revard", "addressLocality": "Les Déserts", "postalCode": "73230", "addressRegion": "Savoie", "addressCountry": "FR"}, "geo": {"@type": "GeoCoordinates", "latitude": 45.642364, "longitude": 5.993623}, "priceRange": "€€", "numberOfRooms": 7, "amenityFeature": [{"@type": "LocationFeatureSpecification", "name": "Jacuzzi", "value": true}, {"@type": "LocationFeatureSpecification", "name": "Sauna", "value": true}, {"@type": "LocationFeatureSpecification", "name": "Salle d'activité", "value": true}, {"@type": "LocationFeatureSpecification", "name": "Cuisine collective", "value": true}, {"@type": "LocationFeatureSpecification", "name": "Parking", "value": true}, {"@type": "LocationFeatureSpecification", "name": "Restaurant sur place", "value": true}], "containedInPlace": {"@type": "Place", "name": "Savoie Grand Revard, La Féclaz"}, "sameAs": ["https://www.instagram.com/creperierepairefeclaz73/", "https://www.tripadvisor.fr/Restaurant_Review-g2223906-d23419866-Reviews-La_Creperie_Du_Repaire-Les_Deserts_Savoie_Auvergne_Rhone_Alpes.html"]}</script>
@@ -630,20 +704,20 @@ footer .legal-line{display:flex;flex-wrap:wrap;justify-content:space-between;gap
 </header>
 <main>
 <section class="phero">
-  <img src="img/gite_004.webp" srcset="img/gite_004_s.webp 640w, img/gite_004.webp 1596w" sizes="100vw" width="1596" height="1065" alt="La grande salle commune du gîte" fetchpriority="high" decoding="async">
+  <img src="img/gite_002.webp" srcset="img/gite_002_s.webp 640w, img/gite_002.webp 1596w" sizes="100vw" width="1596" height="1065" alt="Le bar en bois de la salle commune" fetchpriority="high" decoding="async">
   <div class="wrap"><nav class="crumbs" aria-label="Fil d'Ariane"><ol><li><a href="index.html">Accueil</a></li><li aria-current="page">Le gîte</li></ol></nav><h1>Le gîte</h1>
-    <div class="phero-foot"><p class="lead">Sept appartements, une grande salle et une cuisine collective au pied des pistes de ski de fond.</p><ul class="facts"><li><b>35</b><span>couchages</span></li><li><b>60 €</b><span>la nuit, dès</span></li><li><b>7</b><span>appartements</span></li></ul></div>
+    <div class="phero-foot"><p class="lead">Sept appartements au pied des pistes de ski de fond, une grande salle et une cuisine collective pour se retrouver.</p><ul class="facts"><li><b>dès 60 €</b><span>la nuit</span></li><li><b>35</b><span>couchages</span></li></ul></div>
     <a class="scroll-cue" href="#suite">Découvrir<span aria-hidden="true">↓</span></a></div>
   <svg class="ridge " viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true"><path d="M0,120 L0,55.7 L22,51.4 L45,53.3 L68,60.3 L90,66.6 L112,69.2 L135,70.5 L158,74.1 L180,78.4 L202,78.9 L225,74.7 L248,70.4 L270,71.1 L292,75.6 L315,78.7 L338,77.9 L360,76.2 L382,76.5 L405,76.6 L428,71.8 L450,61.2 L472,50.3 L495,44.0 L518,41.7 L540,38.9 L562,34.2 L585,31.1 L608,32.5 L630,35.4 L652,34.3 L675,28.3 L698,22.4 L720,21.3 L742,23.6 L765,25.1 L788,25.2 L810,27.9 L832,35.4 L855,44.1 L878,48.1 L900,46.2 L922,43.0 L945,42.6 L968,43.2 L990,41.2 L1012,37.1 L1035,35.6 L1058,39.6 L1080,45.4 L1102,47.3 L1125,44.4 L1148,41.1 L1170,40.8 L1192,41.2 L1215,38.9 L1238,35.1 L1260,35.2 L1282,42.1 L1305,51.9 L1328,58.9 L1350,62.3 L1372,65.9 L1395,71.8 L1418,76.7 L1440,76.8 L1440,120 Z"/></svg>
 </section><div id="suite"></div><section><div class="wrap"><div class="split">
   <div class="media rv">
-    <img src="img/gite_003.webp" srcset="img/gite_003_s.webp 640w, img/gite_003.webp 1596w" sizes="(max-width:760px) 100vw, 50vw" width="1596" height="1065" alt="La salle à manger commune du gîte, tables dressées" loading="lazy" decoding="async">
-    <p class="note hand r" aria-hidden="true"><span>la grande salle, pour les repas en tribu</span><svg viewBox="0 0 70 60" aria-hidden="true"><path d="M64 6 C40 6 18 18 10 50"/><path d="M4 40 L10 52 L20 43"/></svg></p>
-    <figure class="inset"><img src="img/gite_015.webp" srcset="img/gite_015_s.webp 640w, img/gite_015.webp 1596w" sizes="(max-width:900px) 46vw, 25vw" width="1596" height="1065" alt="Un appartement aux murs orange" loading="lazy" decoding="async"></figure>
+    <img src="img/gg_10.webp" srcset="img/gg_10_s.webp 640w, img/gg_10.webp 800w" sizes="(max-width:760px) 100vw, 50vw" width="800" height="600" alt="Appartement rénové, coin nuit et cuisine" loading="lazy" decoding="async">
+    
+    <figure class="inset taped"><img src="img/gg_04.webp" srcset="img/gg_04_s.webp 640w, img/gg_04.webp 800w" sizes="(max-width:900px) 46vw, 25vw" width="800" height="600" alt="Salle d&#x27;eau rénovée" loading="lazy" decoding="async"><figcaption class="hand">une salle d&#x27;eau rénovée</figcaption></figure>
   </div>
   <div class="copy rv">
-    <h2>Un refuge pour toute la tribu</h2>
-    <p class="lead">Des appartements de 2 à 6 couchages, ou le gîte entier pour vous seuls. On vient ici en famille, entre amis, en club, en stage ou à moto, et on se retrouve le soir autour de la grande table.</p>
+    <h2>Chacun sa porte, une grande table</h2>
+    <p class="lead">Chaque appartement a sa cuisine et sa salle d'eau. La grande salle, la cuisine collective et la salle d'activité se partagent, ou sont à vous seuls si vous louez tout le gîte.</p>
     <dl class="spec">
   <div><dt>Couchages</dt><dd><b>35</b>répartis en 7 appartements</dd></div>
   <div><dt>Logements</dt><dd><b>2 à 6</b>places, entièrement équipés</dd></div>
@@ -662,39 +736,37 @@ footer .legal-line{display:flex;flex-wrap:wrap;justify-content:space-between;gap
   <div><h3>Petit-déjeuner</h3><p><b>10 €</b> adulte · <b>6 €</b> enfant</p></div>
 </div>
 <p class="fine">Tarifs en vigueur au 1er janvier 2024, toute l'année. Pension par personne et par jour. Devis sur demande pour les groupes et séminaires.</p></div></section><section id="photos" style="padding-top:0"><div class="wrap"><h2 class="rv">Les chambres et le gîte</h2><div class="filters" id="filters" role="group" aria-label="Filtrer les photos"><button aria-pressed="true" data-f="all">Tout<sup>38</sup></button><button aria-pressed="false" data-f="communs">Espaces communs<sup>8</sup></button><button aria-pressed="false" data-f="apparts">Appartements<sup>24</sup></button><button aria-pressed="false" data-f="exterieur">Extérieur<sup>6</sup></button></div><div class="masonry clip" id="gallery"><button data-g="gite" data-c="communs"><img src="img/gite_002.webp" srcset="img/gite_002_s.webp 640w, img/gite_002.webp 1596w" sizes="(max-width:600px) 100vw, (max-width:900px) 50vw, 33vw" width="1596" height="1065" alt="Le bar en bois de la salle commune" loading="lazy" decoding="async"></button><button data-g="gite" data-c="communs"><img src="img/gite_003.webp" srcset="img/gite_003_s.webp 640w, img/gite_003.webp 1596w" sizes="(max-width:600px) 100vw, (max-width:900px) 50vw, 33vw" width="1596" height="1065" alt="La salle à manger commune" loading="lazy" decoding="async"></button><button data-g="gite" data-c="communs"><img src="img/gite_004.webp" srcset="img/gite_004_s.webp 640w, img/gite_004.webp 1596w" sizes="(max-width:600px) 100vw, (max-width:900px) 50vw, 33vw" width="1596" height="1065" alt="La grande salle commune et son coin salon" loading="lazy" decoding="async"></button><button data-g="gite" data-c="communs"><img src="img/gite_005.webp" srcset="img/gite_005_s.webp 640w, img/gite_005.webp 1020w" sizes="(max-width:600px) 100vw, (max-width:900px) 50vw, 33vw" width="1020" height="680" alt="Salon et salle à manger du gîte" loading="lazy" decoding="async"></button><button data-g="gite" data-c="communs"><img src="img/gite_006.webp" srcset="img/gite_006_s.webp 640w, img/gite_006.webp 1020w" sizes="(max-width:600px) 100vw, (max-width:900px) 50vw, 33vw" width="1020" height="680" alt="Coin salon lambrissé" loading="lazy" decoding="async"></button><button data-g="gite" data-c="communs"><img src="img/gg_16.webp" srcset="img/gg_16_s.webp 640w, img/gg_16.webp 738w" sizes="(max-width:600px) 100vw, (max-width:900px) 50vw, 33vw" width="738" height="1600" alt="Grande tablée dressée devant la fresque" loading="lazy" decoding="async"></button><button data-g="gite" data-c="communs"><img src="img/gite_029.webp" srcset="img/gite_029_s.webp 640w, img/gite_029.webp 1020w" sizes="(max-width:600px) 100vw, (max-width:900px) 50vw, 33vw" width="1020" height="680" alt="La cuisine professionnelle" loading="lazy" decoding="async"></button><button data-g="gite" data-c="communs"><img src="img/gite_030.webp" srcset="img/gite_030_s.webp 640w, img/gite_030.webp 1596w" sizes="(max-width:600px) 100vw, (max-width:900px) 50vw, 33vw" width="1596" height="1065" alt="La cuisine collective" loading="lazy" decoding="async"></button><button data-g="gite" data-c="apparts"><img src="img/gg_10.webp" srcset="img/gg_10_s.webp 640w, img/gg_10.webp 800w" sizes="(max-width:600px) 100vw, (max-width:900px) 50vw, 33vw" width="800" height="600" alt="Appartement rénové, coin nuit et cuisine" loading="lazy" decoding="async"></button><button data-g="gite" data-c="apparts"><img src="img/gg_04.webp" srcset="img/gg_04_s.webp 640w, img/gg_04.webp 800w" sizes="(max-width:600px) 100vw, (max-width:900px) 50vw, 33vw" width="800" height="600" alt="Salle d&#x27;eau rénovée" loading="lazy" decoding="async"></button><button data-g="gite" data-c="apparts"><img src="img/gite_007.webp" srcset="img/gite_007_s.webp 640w, img/gite_007.webp 1596w" sizes="(max-width:600px) 100vw, (max-width:900px) 50vw, 33vw" width="1596" height="1065" alt="Chambre lambrissée avec armoire en bois" loading="lazy" decoding="async"></button><button data-g="gite" data-c="apparts"><img src="img/gite_008.webp" srcset="img/gite_008_s.webp 640w, img/gite_008.webp 1020w" sizes="(max-width:600px) 100vw, (max-width:900px) 50vw, 33vw" width="1020" height="680" alt="Appartement du gîte" loading="lazy" decoding="async"></button><button data-g="gite" data-c="apparts" class="late"><img src="img/gite_009.webp" srcset="img/gite_009_s.webp 453w, img/gite_009.webp 453w" sizes="(max-width:600px) 100vw, (max-width:900px) 50vw, 33vw" width="453" height="680" alt="Appartement du gîte" loading="lazy" decoding="async"></button><button data-g="gite" data-c="apparts" class="late"><img src="img/gite_010.webp" srcset="img/gite_010_s.webp 640w, img/gite_010.webp 1020w" sizes="(max-width:600px) 100vw, (max-width:900px) 50vw, 33vw" width="1020" height="680" alt="Appartement du gîte" loading="lazy" decoding="async"></button><button data-g="gite" data-c="apparts" class="late"><img src="img/gite_011.webp" srcset="img/gite_011_s.webp 640w, img/gite_011.webp 1020w" sizes="(max-width:600px) 100vw, (max-width:900px) 50vw, 33vw" width="1020" height="680" alt="Appartement du gîte" loading="lazy" decoding="async"></button><button data-g="gite" data-c="apparts" class="late"><img src="img/gite_012.webp" srcset="img/gite_012_s.webp 640w, img/gite_012.webp 1596w" sizes="(max-width:600px) 100vw, (max-width:900px) 50vw, 33vw" width="1596" height="1065" alt="Appartement du gîte" loading="lazy" decoding="async"></button><button data-g="gite" data-c="apparts" class="late"><img src="img/gite_013.webp" srcset="img/gite_013_s.webp 640w, img/gite_013.webp 1020w" sizes="(max-width:600px) 100vw, (max-width:900px) 50vw, 33vw" width="1020" height="680" alt="Appartement du gîte" loading="lazy" decoding="async"></button><button data-g="gite" data-c="apparts" class="late"><img src="img/gite_014.webp" srcset="img/gite_014_s.webp 640w, img/gite_014.webp 1020w" sizes="(max-width:600px) 100vw, (max-width:900px) 50vw, 33vw" width="1020" height="680" alt="Salle d&#x27;eau avec douche" loading="lazy" decoding="async"></button><button data-g="gite" data-c="apparts" class="late"><img src="img/gite_015.webp" srcset="img/gite_015_s.webp 640w, img/gite_015.webp 1596w" sizes="(max-width:600px) 100vw, (max-width:900px) 50vw, 33vw" width="1596" height="1065" alt="Appartement aux murs orange" loading="lazy" decoding="async"></button><button data-g="gite" data-c="apparts" class="late"><img src="img/gite_016.webp" srcset="img/gite_016_s.webp 640w, img/gite_016.webp 1020w" sizes="(max-width:600px) 100vw, (max-width:900px) 50vw, 33vw" width="1020" height="680" alt="Appartement du gîte" loading="lazy" decoding="async"></button><button data-g="gite" data-c="apparts" class="late"><img src="img/gite_017.webp" srcset="img/gite_017_s.webp 640w, img/gite_017.webp 1020w" sizes="(max-width:600px) 100vw, (max-width:900px) 50vw, 33vw" width="1020" height="680" alt="Coin repas d&#x27;un appartement" loading="lazy" decoding="async"></button><button data-g="gite" data-c="apparts" class="late"><img src="img/gite_018.webp" srcset="img/gite_018_s.webp 640w, img/gite_018.webp 1596w" sizes="(max-width:600px) 100vw, (max-width:900px) 50vw, 33vw" width="1596" height="1065" alt="Appartement du gîte" loading="lazy" decoding="async"></button><button data-g="gite" data-c="apparts" class="late"><img src="img/gite_019.webp" srcset="img/gite_019_s.webp 640w, img/gite_019.webp 1020w" sizes="(max-width:600px) 100vw, (max-width:900px) 50vw, 33vw" width="1020" height="680" alt="Appartement du gîte" loading="lazy" decoding="async"></button><button data-g="gite" data-c="apparts" class="late"><img src="img/gite_020.webp" srcset="img/gite_020_s.webp 640w, img/gite_020.webp 1020w" sizes="(max-width:600px) 100vw, (max-width:900px) 50vw, 33vw" width="1020" height="680" alt="Appartement du gîte" loading="lazy" decoding="async"></button><button data-g="gite" data-c="apparts" class="late"><img src="img/gite_021.webp" srcset="img/gite_021_s.webp 640w, img/gite_021.webp 1020w" sizes="(max-width:600px) 100vw, (max-width:900px) 50vw, 33vw" width="1020" height="680" alt="Appartement avec lits superposés et cuisine" loading="lazy" decoding="async"></button><button data-g="gite" data-c="apparts" class="late"><img src="img/gite_022.webp" srcset="img/gite_022_s.webp 640w, img/gite_022.webp 1020w" sizes="(max-width:600px) 100vw, (max-width:900px) 50vw, 33vw" width="1020" height="680" alt="Appartement du gîte" loading="lazy" decoding="async"></button><button data-g="gite" data-c="apparts" class="late"><img src="img/gite_023.webp" srcset="img/gite_023_s.webp 640w, img/gite_023.webp 1020w" sizes="(max-width:600px) 100vw, (max-width:900px) 50vw, 33vw" width="1020" height="680" alt="Appartement du gîte" loading="lazy" decoding="async"></button><button data-g="gite" data-c="apparts" class="late"><img src="img/gite_024.webp" srcset="img/gite_024_s.webp 640w, img/gite_024.webp 1020w" sizes="(max-width:600px) 100vw, (max-width:900px) 50vw, 33vw" width="1020" height="680" alt="Appartement du gîte" loading="lazy" decoding="async"></button><button data-g="gite" data-c="apparts" class="late"><img src="img/gite_025.webp" srcset="img/gite_025_s.webp 453w, img/gite_025.webp 453w" sizes="(max-width:600px) 100vw, (max-width:900px) 50vw, 33vw" width="453" height="680" alt="Salle d&#x27;eau" loading="lazy" decoding="async"></button><button data-g="gite" data-c="apparts" class="late"><img src="img/gite_026.webp" srcset="img/gite_026_s.webp 640w, img/gite_026.webp 1020w" sizes="(max-width:600px) 100vw, (max-width:900px) 50vw, 33vw" width="1020" height="680" alt="Appartement du gîte" loading="lazy" decoding="async"></button><button data-g="gite" data-c="apparts" class="late"><img src="img/gite_027.webp" srcset="img/gite_027_s.webp 640w, img/gite_027.webp 1020w" sizes="(max-width:600px) 100vw, (max-width:900px) 50vw, 33vw" width="1020" height="680" alt="Appartement du gîte" loading="lazy" decoding="async"></button><button data-g="gite" data-c="apparts" class="late"><img src="img/gite_028.webp" srcset="img/gite_028_s.webp 453w, img/gite_028.webp 453w" sizes="(max-width:600px) 100vw, (max-width:900px) 50vw, 33vw" width="453" height="680" alt="Salle d&#x27;eau avec douche" loading="lazy" decoding="async"></button><button data-g="gite" data-c="exterieur" class="late"><img src="img/gg_12.webp" srcset="img/gg_12_s.webp 640w, img/gg_12.webp 1600w" sizes="(max-width:600px) 100vw, (max-width:900px) 50vw, 33vw" width="1600" height="1200" alt="Le gîte sous le ciel bleu d&#x27;été" loading="lazy" decoding="async"></button><button data-g="gite" data-c="exterieur" class="late"><img src="img/gg_30.webp" srcset="img/gg_30_s.webp 640w, img/gg_30.webp 1600w" sizes="(max-width:600px) 100vw, (max-width:900px) 50vw, 33vw" width="1600" height="739" alt="Mer de nuages sur les Bauges" loading="lazy" decoding="async"></button><button data-g="gite" data-c="exterieur" class="late"><img src="img/gg_01.webp" srcset="img/gg_01_s.webp 640w, img/gg_01.webp 1600w" sizes="(max-width:600px) 100vw, (max-width:900px) 50vw, 33vw" width="1600" height="739" alt="Le sapin illuminé au centre de La Féclaz" loading="lazy" decoding="async"></button><button data-g="gite" data-c="exterieur" class="late"><img src="img/gite_032.webp" srcset="img/gite_032_s.webp 640w, img/gite_032.webp 1020w" sizes="(max-width:600px) 100vw, (max-width:900px) 50vw, 33vw" width="1020" height="572" alt="Rassemblement de motos devant le gîte" loading="lazy" decoding="async"></button><button data-g="gite" data-c="exterieur" class="late"><img src="img/gite_031.webp" srcset="img/gite_031_s.webp 640w, img/gite_031.webp 1596w" sizes="(max-width:600px) 100vw, (max-width:900px) 50vw, 33vw" width="1596" height="1065" alt="Motards devant le gîte en été" loading="lazy" decoding="async"></button><button data-g="gite" data-c="exterieur" class="late"><img src="img/gite_001.webp" srcset="img/gite_001_s.webp 640w, img/gite_001.webp 1596w" sizes="(max-width:600px) 100vw, (max-width:900px) 50vw, 33vw" width="1596" height="1065" alt="Le panneau du gîte au bord de la route du Revard" loading="lazy" decoding="async"></button></div><div class="show-all"><button class="btn ghost" id="showAll" type="button"><span>Voir les 38 photos</span></button></div><figure class="embed live rv" id="visite"><iframe src="https://www.google.com/maps/embed?pb=!4v1740060197598!6m8!1m7!1sCAoSLEFGMVFpcFBVT0F3ckV3ekMwSU5CeENLSGx0djZKVE0zeXZHOW5MUU9ZVVJx!2m2!1d45.64239554733642!2d5.993781733586577!3f339.78!4f-0.3499999999999943!5f0.7820865974627469" title="Visite virtuelle 360° du gîte" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allow="accelerometer; gyroscope; fullscreen" allowfullscreen></iframe><figcaption><b>Visite à 360°</b> Faites glisser pour visiter le gîte</figcaption></figure></div></section><section style="padding-top:0"><div class="wrap"><div class="event">
-  <div class="rv"><img src="img/gite_031.webp" srcset="img/gite_031_s.webp 640w, img/gite_031.webp 1596w" sizes="(max-width:760px) 100vw, 50vw" width="1596" height="1065" alt="Un groupe de motards garé devant le gîte" loading="lazy" decoding="async"></div>
+  <div class="rv"><img src="img/gg_16.webp" srcset="img/gg_16_s.webp 640w, img/gg_16.webp 738w" sizes="(max-width:760px) 100vw, 50vw" width="738" height="1600" alt="Grande tablée dressée devant la fresque" loading="lazy" decoding="async"></div>
   <div class="rv" style="display:grid;gap:22px">
     <h2>Groupes, stages et motards</h2>
     <p class="lead">La salle d'activité accueille stages de yoga, danse, sophrologie, ateliers cuisine et conférences. Les activités de Savoie Grand Revard se prêtent aux séminaires et au team-building. Et les motards ont leur place devant la porte.</p>
     <a class="arrow" href="contact.html">Demander un devis</a>
   </div>
-</div></div></section><section class="on-dark" id="contact">
-  <div class="wrap">
-    <div class="contact-top">
-      <div class="rv">
-        <h2>Réserver, c'est un coup de fil</h2>
-        <a class="bigtel" href="tel:+33778214178">07 78 21 41 78</a>
-        <div class="alt-lines">
-          <span><a href="tel:+33615180081">06 15 18 00 81</a></span>
-          <span><a href="mailto:feclazgites@feclazgites.com">feclazgites@feclazgites.com</a><button class="copy-btn" data-copy="feclazgites@feclazgites.com">Copier</button></span>
-          <span>2348 route du Revard, La Féclaz, 73230 Les Déserts</span>
-        </div>
-        <div class="ctas" style="margin-top:30px"><a class="btn" href="https://www.google.com/maps/dir/?api=1&destination=45.642364,5.993623" target="_blank" rel="noopener"><span>Itinéraire</span></a></div>
-      </div>
-      <div class="rv">
-        <ul class="routes">
-          <li>Chambéry, gare SNCF<i></i><b>20 min</b></li>
-          <li>Aix-les-Bains, gare SNCF<i></i><b>25 min</b></li>
-          <li>Annecy<i></i><b>45 min</b></li>
-          <li>Lyon<i></i><b>1 h 30</b></li>
-          <li>Genève<i></i><b>2 h</b></li>
-        </ul>
-        <p class="moto"><img src="img/bike.webp" width="500" height="335" alt="" loading="lazy"><span>En moto ou autrement. Pour vos road trips dans les Alpes, on aime bien l'appli GPS <a href="https://app68.eu/" target="_blank" rel="noopener">app68</a>.</span></p>
-      </div>
+</div></div></section><section id="demande">
+  <div class="wrap split">
+    <div class="copy rv side-title" style="display:grid;gap:20px">
+      <h2>Demander un séjour</h2>
+      <p class="lead muted">Pas de réservation en ligne : on préfère vous parler. Remplissez ces quelques lignes, votre messagerie prépare l'e-mail, vous n'avez plus qu'à l'envoyer. On vous répond avec les disponibilités et un devis.</p>
+      <p class="muted">Plus rapide : <a href="tel:+33778214178">07 78 21 41 78</a>. Si on ne répond pas, laissez un message.</p>
     </div>
-    
+    <form class="ask rv side-spec" id="ask" data-to="feclazgites@feclazgites.com">
+      <label>Arrivée<input type="date" name="arrivee" id="f-arr" required></label>
+      <label>Départ<input type="date" name="depart" id="f-dep" required></label>
+      <label>Adultes<input type="number" name="adultes" id="f-ad" min="1" max="35" value="2" required></label>
+      <label>Enfants<input type="number" name="enfants" id="f-en" min="0" max="35" value="0"></label>
+      <label class="wide">Je souhaite<select name="logement" id="f-log">
+        <option>Un appartement</option><option>Plusieurs appartements</option><option>Le gîte entier (groupe, séminaire)</option></select></label>
+      <label class="wide">Formule<select name="formule" id="f-for">
+        <option>Gestion libre</option><option>Demi-pension</option><option>Pension complète</option><option>À voir ensemble</option></select></label>
+      <label class="wide check"><input type="checkbox" name="spa" id="f-spa"> Réserver aussi le spa</label>
+      <label class="wide">Message<textarea name="message" id="f-msg" rows="4" placeholder="Votre nom, votre téléphone, l'occasion du séjour…"></textarea></label>
+      <div class="wide"><button class="btn" type="submit"><span>Préparer l'e-mail</span></button></div>
+    </form>
   </div>
-</section><section><div class="wrap"><ul class="more rv"><li><a href="spa.html"><strong>Le spa</strong><span>Jacuzzi et sauna à l'heure, jusqu'à 6 personnes</span></a></li><li><a href="creperie.html"><strong>La crêperie</strong><span>Toute la carte, des galettes aux glaces</span></a></li><li><a href="station.html"><strong>La station</strong><span>Ski de fond, traîneau, rando, VTT</span></a></li><li><a href="contact.html"><strong>Venir</strong><span>Itinéraire, téléphone et questions fréquentes</span></a></li></ul></div></section>
+</section><section class="book-bar on-dark"><div class="wrap">
+  <p><b>Réserver</b> <a href="tel:+33778214178">07 78 21 41 78</a> <a href="mailto:feclazgites@feclazgites.com">feclazgites@feclazgites.com</a></p>
+  <div class="ctas"><a class="btn" href="contact.html#demande"><span>Demander un séjour</span></a><a class="arrow" href="https://www.google.com/maps/dir/?api=1&destination=45.642364,5.993623" target="_blank" rel="noopener">Itinéraire</a></div>
+</div></section>
 </main>
 <footer>
   <div class="wrap">
@@ -714,11 +786,11 @@ footer .legal-line{display:flex;flex-wrap:wrap;justify-content:space-between;gap
         <li><a href="https://www.chamberymontagnes.com/savoiegrandrevard/" target="_blank" rel="noopener">Savoie Grand Revard</a></li>
         <li><a href="mentions-legales.html">Mentions légales</a></li></ul></div>
     </div>
-    <p class="giant" aria-hidden="true">Le Repaire</p>
+    <img class="foot-logo" src="img/logo.png" width="356" height="400" alt="" loading="lazy">
     <div class="legal-line"><span>© EURL Le Repaire</span><span>La Féclaz · Savoie Grand Revard · Massif des Bauges</span></div>
   </div>
 </footer>
-<div class="dock" aria-label="Accès rapide"><a href="tel:+33778214178">Appeler</a><a href="https://www.google.com/maps/dir/?api=1&destination=45.642364,5.993623" target="_blank" rel="noopener">Itinéraire</a><a href="creperie.html#carte">La carte</a></div>
+<div class="dock" aria-label="Accès rapide"><a href="tel:+33778214178">Appeler</a><a href="https://www.google.com/maps/dir/?api=1&destination=45.642364,5.993623" target="_blank" rel="noopener">Itinéraire</a><a href="#tarifs">Tarifs</a></div>
 <div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="Photos">
   <div class="lb-top"><span id="lbCount"></span><button id="lbClose">Fermer</button></div>
   <div class="lb-stage"><button class="prev" id="lbPrev" aria-label="Photo précédente">‹</button><img id="lbImg" alt=""><button class="next" id="lbNext" aria-label="Photo suivante">›</button></div>
@@ -742,10 +814,11 @@ burger.addEventListener('click', () => {
   document.body.classList.toggle('menu-open', o);
   burger.setAttribute('aria-expanded', o);
   burger.setAttribute('aria-label', o ? 'Fermer le menu' : 'Ouvrir le menu');
+  $('path', burger).setAttribute('d', o ? 'M5 5l14 14M19 5L5 19' : 'M3 8h18M3 16h18');
 });
-const closeNav = () => { nav.classList.remove('open'); document.body.classList.remove('menu-open'); burger.setAttribute('aria-expanded', 'false'); burger.setAttribute('aria-label', 'Ouvrir le menu'); };
+const closeNav = () => { nav.classList.remove('open'); document.body.classList.remove('menu-open'); burger.setAttribute('aria-expanded', 'false'); burger.setAttribute('aria-label', 'Ouvrir le menu'); $('path', burger).setAttribute('d', 'M3 8h18M3 16h18'); };
 document.addEventListener('keydown', e => { if (e.key === 'Escape' && nav.classList.contains('open')) { closeNav(); burger.focus(); } });
-nav.addEventListener('click', e => { if (e.target.closest('a')) { nav.classList.remove('open'); document.body.classList.remove('menu-open'); burger.setAttribute('aria-expanded', 'false'); } });
+nav.addEventListener('click', e => { if (e.target.closest('a')) closeNav(); });
 
 // reveal on scroll (content is in the HTML; this only adds motion)
 const rv = $$('.rv');
@@ -778,7 +851,7 @@ if (qs.length) {
   const show = i => { q = (i + qs.length) % qs.length; qs.forEach((f, j) => f.classList.toggle('on', j === q)); qd.forEach((b, j) => b.setAttribute('aria-pressed', j === q)); };
   qd.forEach((b, j) => b.addEventListener('click', () => { show(j); clearInterval(qt); }));
   show(0);
-  if (!reduce) qt = setInterval(() => show(q + 1), 6500);
+  if (!reduce) qt = setInterval(() => show(q + 1), 9000);
 }
 
 // film strip: drag to scroll + arrows
@@ -859,13 +932,21 @@ if (lb) {
   lb.addEventListener('touchend', e => { const d = e.changedTouches[0].clientX - tx; if (Math.abs(d) > 50) step(d < 0 ? 1 : -1); });
 }
 
-// click-to-load Google embeds (no Google cookies until asked)
-$$('.embed').forEach(el => $('button', el)?.addEventListener('click', () => {
-  const f = document.createElement('iframe');
-  f.src = el.dataset.src; f.title = el.dataset.title; f.allowFullscreen = true;
-  f.referrerPolicy = 'no-referrer-when-downgrade'; f.allow = 'fullscreen';
-  el.replaceChildren(f);
-}));
+// stay request: build the e-mail in the visitor's own mail app (no server)
+const ask = $('#ask');
+if (ask) {
+  const today = new Date().toISOString().slice(0, 10);
+  $('#f-arr').min = today; $('#f-dep').min = today;
+  $('#f-arr').addEventListener('change', e => { $('#f-dep').min = e.target.value; });
+  ask.addEventListener('submit', e => {
+    e.preventDefault();
+    const v = id => $(id).value.trim();
+    const fr = d => d ? d.split('-').reverse().join('/') : '';
+    const body = [`Arrivée : ${fr(v('#f-arr'))}`, `Départ : ${fr(v('#f-dep'))}`, `Adultes : ${v('#f-ad')}`, `Enfants : ${v('#f-en')}`,
+      `Logement : ${v('#f-log')}`, `Formule : ${v('#f-for')}`, `Spa : ${$('#f-spa').checked ? 'oui' : 'non'}`, '', v('#f-msg')].join('\n');
+    location.href = `mailto:${ask.dataset.to}?subject=${encodeURIComponent('Demande de séjour du ' + fr(v('#f-arr')) + ' au ' + fr(v('#f-dep')))}&body=${encodeURIComponent(body)}`;
+  });
+}
 
 // copy buttons
 $$('[data-copy]').forEach(b => b.addEventListener('click', () => {

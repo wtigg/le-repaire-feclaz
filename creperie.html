@@ -7,8 +7,8 @@
 <meta name="description" content="Galettes de sarrasin, crêpes, tartines savoyardes, tartiflettes et glaces maison à La Féclaz. Carte avec prix, horaires, salon de thé, concerts.">
 <link rel="canonical" href="https://feclazgites.com/creperie.html">
 <meta name="robots" content="noindex,nofollow">
-<meta name="theme-color" content="#EEF0EB" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#101411" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#EEF0EB">
+<meta name="color-scheme" content="light">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="Le Repaire de La Féclaz">
@@ -117,12 +117,6 @@
   --gutter:clamp(16px,4.5vw,56px);
   --bar:68px;
 }
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
-  --snow:#121613;--paper:#1A1F1B;--ink:#E9ECE6;--muted:#9AA39B;--rule:rgba(233,236,230,.14);--rule-strong:#E9ECE6;
-  --ember:#EF7337;--ember-ink:#160B04;--wood:#C8955F;--night:#0A0D0B;color-scheme:dark}}
-:root[data-theme="dark"]{
-  --snow:#121613;--paper:#1A1F1B;--ink:#E9ECE6;--muted:#9AA39B;--rule:rgba(233,236,230,.14);--rule-strong:#E9ECE6;
-  --ember:#EF7337;--ember-ink:#160B04;--wood:#C8955F;--night:#0A0D0B;color-scheme:dark}
 
 *{box-sizing:border-box}
 [hidden]{display:none!important}
@@ -210,11 +204,12 @@ section{padding-block:clamp(80px,11vw,160px)}
 @media (max-width:860px){.hero-foot{grid-template-columns:1fr}.coords{display:none}}
 
 /* inner page hero */
-.phero{position:relative;min-height:clamp(420px,58svh,600px);display:flex;align-items:flex-end;color:#fff;background:#0b0f0c;overflow:hidden;padding:0}
+.phero{position:relative;min-height:clamp(380px,56svh,560px);display:flex;align-items:flex-end;color:#fff;background:#0b0f0c;overflow:hidden;padding:0}
 .phero > img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.phero::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(8,11,9,.5),rgba(8,11,9,.05) 35%,rgba(8,11,9,.72))}
+.phero::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(8,11,9,.5),rgba(8,11,9,.1) 35%,rgba(8,11,9,.85))}
+.phero .lead{text-shadow:0 1px 12px rgba(0,0,0,.35)}
 .phero .wrap{position:relative;z-index:3;width:100%;padding-top:calc(var(--bar) + 30px);padding-bottom:clamp(70px,9vw,130px)}
-.phero h1{font-size:clamp(4rem,12vw,10.5rem);font-weight:900;line-height:.8}
+.phero h1{font-size:clamp(3.6rem,9vw,8rem);font-weight:900;line-height:.82}
 .phero .lead{margin-top:20px;color:#E5EBE6}
 .crumbs ol{list-style:none;margin:0 0 18px;padding:0;display:flex;gap:10px;font:600 .8rem/1 var(--label);letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.75)}
 .crumbs li+li::before{content:"/";margin-right:10px;opacity:.6}
@@ -400,8 +395,6 @@ section{padding-block:clamp(80px,11vw,160px)}
 .hosts > *{min-width:0}
 .hosts .pair{display:flex;justify-content:center;height:clamp(260px,34vw,440px)}
 .hosts .pair img{height:100%;width:auto;mix-blend-mode:multiply}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .hosts .pair img{mix-blend-mode:screen;filter:invert(1)}}
-:root[data-theme="dark"] .hosts .pair img{mix-blend-mode:screen;filter:invert(1)}
 .hosts .letter{display:grid;gap:22px}
 .hosts .sign{font-size:clamp(2rem,3vw,2.8rem);color:var(--wood)}
 @media (max-width:860px){.hosts{grid-template-columns:1fr}}
@@ -525,8 +518,6 @@ footer .legal-line{display:flex;flex-wrap:wrap;justify-content:space-between;gap
 
 /* additions after review */
 .brand img{width:40px;height:auto}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .bar.solid .brand img,:root:not([data-theme="light"]) .bar.always .brand img{background:#F3F1EA;border-radius:50%;padding:3px}}
-:root[data-theme="dark"] .bar.solid .brand img,:root[data-theme="dark"] .bar.always .brand img{background:#F3F1EA;border-radius:50%;padding:3px}
 .show-all{margin-top:22px}
 .masonry.clip button.late{display:none}
 .acts .row.no-img{grid-template-columns:minmax(0,1fr) auto}
@@ -577,7 +568,7 @@ footer .legal-line{display:flex;flex-wrap:wrap;justify-content:space-between;gap
 .scroll-cue{position:absolute;right:var(--gutter);bottom:clamp(70px,9vw,130px);display:none}
 .phero .wrap{position:relative}
 .scroll-cue{position:static;display:inline-flex;align-items:center;gap:10px;margin-top:26px;font:700 .85rem/1 var(--label);letter-spacing:.16em;text-transform:uppercase;text-decoration:none;color:#fff}
-.scroll-cue span{display:inline-grid;place-items:center;width:34px;height:34px;border:1.5px solid rgba(255,255,255,.7);border-radius:50%;animation:nudge 1.8s ease-in-out infinite}
+.scroll-cue span{display:inline-grid;place-items:center;width:34px;height:34px;border:1.5px solid rgba(255,255,255,.7);border-radius:50%;animation:nudge 1.6s ease-in-out 1s 3}
 @keyframes nudge{0%,100%{transform:translateY(0)}50%{transform:translateY(5px)}}
 @media (max-width:860px){.phero-foot{grid-template-columns:1fr}.facts li{padding-right:16px;margin-right:16px}}
 @media (max-width:420px){.facts b{font-size:1.5rem}.facts span{font-size:.66rem}}
@@ -613,6 +604,89 @@ footer .legal-line{display:flex;flex-wrap:wrap;justify-content:space-between;gap
 .routes.light{border-top-color:var(--rule-strong)}
 .routes.light li{border-bottom-color:var(--rule)}
 .routes.light li{font-size:1.1rem}
+
+/* ---- crit 2 ---- */
+/* split hero (spa): photo kept at a size it can carry */
+.phero.split-hero{min-height:0;display:block;background:var(--night);color:var(--on-night);padding:calc(var(--bar) + 30px) 0 clamp(50px,7vw,90px)}
+.phero.split-hero::after{display:none}
+.phero.split-hero .wrap{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(28px,5vw,70px);align-items:end;padding:0 var(--gutter)}
+.sh-copy{display:grid;gap:20px;padding-bottom:10px}
+.sh-copy .lead{text-shadow:none;color:var(--on-night-muted);margin:0}
+.sh-copy .facts{border-top-color:var(--night-rule)}
+.sh-copy .facts li{border-right-color:var(--night-rule)}
+.sh-copy .facts span{color:var(--on-night-muted)}
+.sh-media{margin:0;max-width:900px}
+.sh-media img{width:100%;aspect-ratio:4/3;object-fit:cover}
+@media (max-width:860px){.phero.split-hero .wrap{grid-template-columns:1fr}.sh-media{order:-1}}
+
+/* taped photos, like the owners' scrapbook */
+.taped{background:var(--paper);padding:10px 10px 0;box-shadow:0 22px 40px -24px rgba(0,0,0,.45)}
+.taped img{display:block}
+.taped figcaption{font-size:1.35rem;color:var(--wood);text-align:center;padding:6px 0 8px}
+.taped::before,.taped::after{content:"";position:absolute;width:64px;height:20px;background:rgba(240,226,200,.85);box-shadow:0 1px 2px rgba(0,0,0,.08);z-index:2}
+.taped::before{top:-9px;left:14%;transform:rotate(-5deg)}
+.taped::after{top:-9px;right:14%;transform:rotate(4deg)}
+.inset.taped{border:0;box-shadow:0 22px 40px -24px rgba(0,0,0,.45);transform:rotate(2deg)}
+.collage .c2.taped{border:0;aspect-ratio:auto;overflow:visible}
+.collage .c2.taped img{aspect-ratio:1;height:auto}
+
+/* concert poster */
+.concert-media{position:relative}
+.poster{position:absolute;width:38%;right:-6%;bottom:-12%;transform:rotate(3deg);margin:0}
+@media (max-width:860px){.poster{right:2%;width:42%}.concert-media{margin-bottom:60px}}
+
+/* hero rating */
+.rating b{font:900 2.6rem/1 var(--poster)}
+.rating b small{font-size:.5em;opacity:.8}
+.score b sup{font-size:.32em;vertical-align:top;margin-left:4px;color:var(--muted)}
+
+/* spa photos */
+.spa-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:clamp(40px,6vw,70px)}
+.spa-row button,.spa-photos button{all:unset;cursor:pointer;overflow:hidden;display:block}
+.spa-row img{width:100%;aspect-ratio:4/3;object-fit:cover;transition:transform .8s ease}
+.spa-row button:hover img{transform:scale(1.04)}
+.spa-row button:focus-visible,.spa-photos button:focus-visible{outline:3px solid var(--ember-on-night);outline-offset:-3px}
+.spa-photos{margin-top:clamp(40px,6vw,70px)}
+@media (max-width:700px){.spa-row{grid-template-columns:1fr 1fr}.spa-row button:first-child{grid-column:1/-1}}
+
+/* slim booking bar on inner pages */
+.book-bar{padding-block:clamp(36px,5vw,56px)}
+.book-bar .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:20px 40px}
+.book-bar p{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 26px;font-size:1.05rem}
+.book-bar p b{font:800 2rem/1 var(--poster);text-transform:uppercase}
+.book-bar p a{text-decoration:none;border-bottom:1px solid var(--night-rule);padding-block:8px}
+.book-bar p a:first-of-type{font:800 1.8rem/1 var(--poster);border:0}
+
+/* stay request form */
+.ask{display:grid;grid-template-columns:1fr 1fr;gap:16px 18px;border-top:3px solid var(--rule-strong);padding-top:24px}
+.ask label{display:grid;gap:6px;font:600 .78rem/1.2 var(--label);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.ask .wide{grid-column:1/-1}
+.ask input,.ask select,.ask textarea{font:400 1.05rem/1.4 var(--serif);color:var(--ink);background:var(--paper);border:1px solid var(--rule);border-bottom:2px solid var(--ink);padding:12px 12px;border-radius:0;min-height:48px;width:100%}
+.ask input:focus,.ask select:focus,.ask textarea:focus{outline:none;border-bottom-color:var(--ember);background:#fff}
+.ask .check{display:flex;align-items:center;gap:12px;font-size:.85rem;color:var(--ink);min-height:44px}
+.ask .check input{width:22px;height:22px;min-height:0;accent-color:var(--ember)}
+@media (max-width:520px){.ask{grid-template-columns:1fr}}
+
+/* footer: logo instead of outlined wordmark, bigger tap targets */
+.foot-logo{width:120px;height:auto;margin:clamp(40px,6vw,70px) auto 30px;opacity:.9}
+footer li a,.alt-lines a{display:inline-block;padding-block:8px}
+.ticks button{padding:20px 0}
+.ticks button[aria-pressed="true"]::after{top:20px}
+.split .copy{grid-column:8/span 5}
+.split.flip .copy{grid-column:1/span 5}
+.split.flip .media{grid-column:7/span 6}
+.split h2{font-size:clamp(2.8rem,4.6vw,5rem);overflow-wrap:break-word}
+@media (max-width:900px){.split .copy,.split.flip .copy,.split.flip .media{grid-column:1/-1}}
+.nav a.nav-call{min-height:48px;display:flex!important;align-items:center}
+.split .copy.side-title{grid-column:1/span 5}
+.split .side-spec{grid-column:7/span 6}
+@media (max-width:900px){.split .copy.side-title,.split .side-spec{grid-column:1/-1}}
+.spa-photos{columns:auto;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.spa-photos button{margin:0}
+.spa-photos img{aspect-ratio:4/3;object-fit:cover;height:auto}
+@media (max-width:600px){.spa-photos{grid-template-columns:1fr 1fr}}
+.phero > img{object-position:center 62%}
+.collage .c1 img{object-position:center 75%}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://feclazgites.com/"}, {"@type": "ListItem", "position": 2, "name": "La crêperie", "item": "https://feclazgites.com/creperie.html"}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Restaurant", "@id": "https://feclazgites.com/#creperie", "name": "La Crêperie du Repaire", "servesCuisine": ["Crêpes", "Galettes de sarrasin", "Savoyarde"], "url": "https://feclazgites.com/creperie.html", "hasMenu": "https://feclazgites.com/creperie.html#carte", "telephone": "+33 7 78 21 41 78", "address": {"@type": "PostalAddress", "streetAddress": "2348 route du Revard", "addressLocality": "Les Déserts", "postalCode": "73230", "addressRegion": "Savoie", "addressCountry": "FR"}, "geo": {"@type": "GeoCoordinates", "latitude": 45.642364, "longitude": 5.993623}, "priceRange": "€€", "acceptsReservations": true, "image": "https://feclazgites.com/img/gg_08.webp", "parentOrganization": {"@id": "https://feclazgites.com/#repaire"}, "sameAs": ["https://www.instagram.com/creperierepairefeclaz73/", "https://www.tripadvisor.fr/Restaurant_Review-g2223906-d23419866-Reviews-La_Creperie_Du_Repaire-Les_Deserts_Savoie_Auvergne_Rhone_Alpes.html"]}</script>
@@ -631,24 +705,25 @@ footer .legal-line{display:flex;flex-wrap:wrap;justify-content:space-between;gap
 </header>
 <main>
 <section class="phero">
-  <img src="img/gg_27.webp" srcset="img/gg_27_s.webp 640w, img/gg_27.webp 1596w" sizes="100vw" width="1596" height="1065" alt="La salle de la crêperie pleine un midi" fetchpriority="high" decoding="async">
+  <img src="img/gg_31.webp" srcset="img/gg_31_s.webp 640w, img/gg_31.webp 2000w" sizes="100vw" width="2000" height="1500" alt="Café en terrasse face aux sapins enneigés" fetchpriority="high" decoding="async">
   <div class="wrap"><nav class="crumbs" aria-label="Fil d'Ariane"><ol><li><a href="index.html">Accueil</a></li><li aria-current="page">La crêperie</li></ol></nav><h1>La crêperie</h1>
-    <div class="phero-foot"><p class="lead">Galettes, tartiflettes et crêpes maison, à 350 m des pistes de fond.</p><ul class="facts"><li><b>12 h</b><span>à 20 h 30 en saison</span></li><li><b>350 m</b><span>des pistes de fond</span></li><li><b>Maison</b><span>galettes et crêpes</span></li></ul></div>
+    <div class="phero-foot"><p class="lead">Ouvert tous les jours en saison, de 12 h à 20 h 30 sans interruption. Hors saison, appelez avant de venir.</p><ul class="facts"><li><b>12 h – 20 h 30</b><span>tous les jours en saison</span></li><li><b>350 m</b><span>des pistes de fond</span></li></ul></div>
     <a class="scroll-cue" href="#suite">Découvrir<span aria-hidden="true">↓</span></a></div>
   <svg class="ridge " viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true"><path d="M0,120 L0,31.3 L22,27.4 L45,24.7 L68,26.6 L90,31.0 L112,32.4 L135,28.5 L158,23.4 L180,22.4 L202,25.2 L225,27.6 L248,28.0 L270,30.1 L292,36.9 L315,45.8 L338,50.9 L360,49.6 L382,46.0 L405,44.6 L428,44.9 L450,42.9 L472,38.3 L495,35.7 L518,38.7 L540,44.7 L562,48.0 L585,46.4 L608,43.7 L630,43.8 L652,45.3 L675,44.4 L698,41.2 L720,40.9 L742,47.2 L765,57.3 L788,65.4 L810,69.5 L832,72.8 L855,78.2 L878,83.2 L900,83.4 L922,79.3 L945,76.5 L968,78.8 L990,83.7 L1012,86.0 L1035,84.5 L1058,82.7 L1080,83.0 L1102,82.3 L1125,76.2 L1148,65.4 L1170,56.1 L1192,52.2 L1215,51.7 L1238,50.0 L1260,46.9 L1282,46.2 L1305,49.6 L1328,52.9 L1350,51.3 L1372,45.3 L1395,40.6 L1418,40.5 L1440,42.6 L1440,120 Z"/></svg>
 </section><div id="suite"></div><section><div class="wrap"><div class="split flip">
   <div class="media collage rv">
-    <figure class="c1"><img src="img/gg_08.webp" srcset="img/gg_08_s.webp 640w, img/gg_08.webp 1600w" sizes="(max-width:900px) 62vw, 36vw" width="1600" height="2133" alt="Tables en bois dressées dans la crêperie" loading="lazy" decoding="async"></figure>
-    <figure class="c2"><img src="img/gg_18.webp" srcset="img/gg_18_s.webp 640w, img/gg_18.webp 1600w" sizes="(max-width:900px) 44vw, 26vw" width="1600" height="1999" alt="La crêpe Tallulah, frangipane, poire et chocolat chaud" loading="lazy" decoding="async"></figure>
+    <figure class="c1"><img src="img/gg_14.webp" srcset="img/gg_14_s.webp 640w, img/gg_14.webp 800w" sizes="(max-width:900px) 62vw, 36vw" width="800" height="600" alt="La salle de la crêperie" loading="lazy" decoding="async"></figure>
+    <figure class="c2 taped"><img src="img/gg_19.webp" srcset="img/gg_19_s.webp 640w, img/gg_19.webp 1600w" sizes="(max-width:900px) 44vw, 26vw" width="1600" height="3463" alt="Crêpe et glace sur une table gravée Le Repaire" loading="lazy" decoding="async"><figcaption class="hand">crêpe et glace maison</figcaption></figure>
     <figure class="c3"><img src="img/creperie_windows.webp" width="400" height="307" alt="L'enseigne en bois de la Crêperie du Repaire" loading="lazy"></figure>
   </div>
   <div class="copy rv">
-    <h2>La crêperie du Repaire</h2>
+    <h2>Galettes, crêpes et tartiflettes</h2>
     <p class="lead">À 350 m des pistes de ski de fond. Galettes de sarrasin, tartines savoyardes, tartiflettes, crêpes et glaces, tout est fait maison. Et certains soirs, on pousse les tables pour un concert.</p>
     <dl class="hours">
   <div><dt>En saison</dt><dd>Tous les jours, de 12 h à 20 h 30 en service continu, sucré et salé</dd></div>
   <div><dt>Salon de thé</dt><dd>L'hiver, à partir de 13 h 30 : thés, infusions, cappuccino, vin chaud, cidre à la pression</dd></div>
-  <div><dt>Réserver</dt><dd>07 78 21 41 78 · chiens bienvenus</dd></div>
+  <div><dt>Hors saison</dt><dd>Sur réservation : appelez avant de venir</dd></div>
+  <div><dt>Réserver</dt><dd><a href="tel:+33778214178">07 78 21 41 78</a> · chiens bienvenus</dd></div>
 </dl>
     <blockquote class="quote-cite">Ronde, généreuse, la crêpe, dorée et parfumée, ravive en chacun de nous une présence chaleureuse, un soleil lié à notre enfance.<cite>Martine Chaudey</cite></blockquote>
   </div>
@@ -662,48 +737,26 @@ footer .legal-line{display:flex;flex-wrap:wrap;justify-content:space-between;gap
   </div>
 </section><section style="padding:0"><div class="wrap"></div></section><section style="padding-top:0">
   <div class="wrap strip-head rv"><h2>La crêperie en images</h2><div class="strip-nav" data-strip="stripCrepe"><button data-dir="prev" aria-label="Photos précédentes">←</button><button data-dir="next" aria-label="Photos suivantes">→</button></div></div>
-  <div class="strip" id="stripCrepe"><button data-g="creperie"><img src="img/gg_27.webp" srcset="img/gg_27_s.webp 640w, img/gg_27.webp 1596w" sizes="(max-width:760px) 80vw, 40vw" width="1596" height="1065" alt="La salle de la crêperie pleine un midi" loading="lazy" decoding="async"></button><button data-g="creperie"><img src="img/gg_18.webp" srcset="img/gg_18_s.webp 640w, img/gg_18.webp 1600w" sizes="(max-width:760px) 80vw, 40vw" width="1600" height="1999" alt="La crêpe Tallulah : frangipane, poire et chocolat chaud" loading="lazy" decoding="async"></button><button data-g="creperie"><img src="img/gg_08.webp" srcset="img/gg_08_s.webp 640w, img/gg_08.webp 1600w" sizes="(max-width:760px) 80vw, 40vw" width="1600" height="2133" alt="Tables en bois dressées dans la crêperie" loading="lazy" decoding="async"></button><button data-g="creperie"><img src="img/gg_13.webp" srcset="img/gg_13_s.webp 640w, img/gg_13.webp 1325w" sizes="(max-width:760px) 80vw, 40vw" width="1325" height="2048" alt="L&#x27;enseigne de la crêperie sous la neige" loading="lazy" decoding="async"></button><button data-g="creperie"><img src="img/gg_32.webp" srcset="img/gg_32_s.webp 640w, img/gg_32.webp 1596w" sizes="(max-width:760px) 80vw, 40vw" width="1596" height="1065" alt="Soirée à la crêperie" loading="lazy" decoding="async"></button><button data-g="creperie"><img src="img/gg_17.webp" srcset="img/gg_17_s.webp 640w, img/gg_17.webp 1440w" sizes="(max-width:760px) 80vw, 40vw" width="1440" height="1440" alt="Sirops artisanaux au comptoir" loading="lazy" decoding="async"></button><button data-g="creperie"><img src="img/gg_31.webp" srcset="img/gg_31_s.webp 640w, img/gg_31.webp 1600w" sizes="(max-width:760px) 80vw, 40vw" width="1600" height="1200" alt="Café en terrasse face aux sapins enneigés" loading="lazy" decoding="async"></button><button data-g="creperie"><img src="img/gg_07.webp" srcset="img/gg_07_s.webp 640w, img/gg_07.webp 1600w" sizes="(max-width:760px) 80vw, 40vw" width="1600" height="2354" alt="Bières et cidres" loading="lazy" decoding="async"></button><button data-g="creperie"><img src="img/gg_39.webp" srcset="img/gg_39_s.webp 640w, img/gg_39.webp 1596w" sizes="(max-width:760px) 80vw, 40vw" width="1596" height="1065" alt="Concert acoustique à la crêperie" loading="lazy" decoding="async"></button><button data-g="creperie"><img src="img/gg_14.webp" srcset="img/gg_14_s.webp 640w, img/gg_14.webp 800w" sizes="(max-width:760px) 80vw, 40vw" width="800" height="600" alt="La salle de la crêperie" loading="lazy" decoding="async"></button><button data-g="creperie"><img src="img/gg_29.webp" srcset="img/gg_29_s.webp 640w, img/gg_29.webp 1600w" sizes="(max-width:760px) 80vw, 40vw" width="1600" height="2133" alt="Bouteilles au soleil d&#x27;hiver" loading="lazy" decoding="async"></button><button data-g="creperie"><img src="img/gg_33.webp" srcset="img/gg_33_s.webp 640w, img/gg_33.webp 1600w" sizes="(max-width:760px) 80vw, 40vw" width="1600" height="2133" alt="Bières au frais dans la neige" loading="lazy" decoding="async"></button><button data-g="creperie"><img src="img/gg_19.webp" srcset="img/gg_19_s.webp 640w, img/gg_19.webp 1600w" sizes="(max-width:760px) 80vw, 40vw" width="1600" height="3463" alt="Crêpe et glace sur une table gravée Le Repaire" loading="lazy" decoding="async"></button><button data-g="creperie"><img src="img/gg_26.webp" srcset="img/gg_26_s.webp 640w, img/gg_26.webp 1600w" sizes="(max-width:760px) 80vw, 40vw" width="1600" height="1645" alt="La fresque de la crêperie" loading="lazy" decoding="async"></button></div>
+  <div class="strip" id="stripCrepe"><button data-g="creperie"><img src="img/gg_18.webp" srcset="img/gg_18_s.webp 640w, img/gg_18.webp 1600w" sizes="(max-width:760px) 80vw, 40vw" width="1600" height="1999" alt="La crêpe Tallulah : frangipane, poire et chocolat chaud" loading="lazy" decoding="async"></button><button data-g="creperie"><img src="img/gg_08.webp" srcset="img/gg_08_s.webp 640w, img/gg_08.webp 1600w" sizes="(max-width:760px) 80vw, 40vw" width="1600" height="2133" alt="Tables en bois dressées dans la crêperie" loading="lazy" decoding="async"></button><button data-g="creperie"><img src="img/gg_13.webp" srcset="img/gg_13_s.webp 640w, img/gg_13.webp 1325w" sizes="(max-width:760px) 80vw, 40vw" width="1325" height="2048" alt="L&#x27;enseigne de la crêperie sous la neige" loading="lazy" decoding="async"></button><button data-g="creperie"><img src="img/gg_32.webp" srcset="img/gg_32_s.webp 640w, img/gg_32.webp 1596w" sizes="(max-width:760px) 80vw, 40vw" width="1596" height="1065" alt="Soirée à la crêperie" loading="lazy" decoding="async"></button><button data-g="creperie"><img src="img/gg_17.webp" srcset="img/gg_17_s.webp 640w, img/gg_17.webp 1440w" sizes="(max-width:760px) 80vw, 40vw" width="1440" height="1440" alt="Sirops artisanaux au comptoir" loading="lazy" decoding="async"></button><button data-g="creperie"><img src="img/gg_07.webp" srcset="img/gg_07_s.webp 640w, img/gg_07.webp 1600w" sizes="(max-width:760px) 80vw, 40vw" width="1600" height="2354" alt="Bières et cidres" loading="lazy" decoding="async"></button><button data-g="creperie"><img src="img/gg_39.webp" srcset="img/gg_39_s.webp 640w, img/gg_39.webp 1596w" sizes="(max-width:760px) 80vw, 40vw" width="1596" height="1065" alt="Concert acoustique à la crêperie" loading="lazy" decoding="async"></button><button data-g="creperie"><img src="img/gg_14.webp" srcset="img/gg_14_s.webp 640w, img/gg_14.webp 800w" sizes="(max-width:760px) 80vw, 40vw" width="800" height="600" alt="La salle de la crêperie" loading="lazy" decoding="async"></button><button data-g="creperie"><img src="img/gg_29.webp" srcset="img/gg_29_s.webp 640w, img/gg_29.webp 1600w" sizes="(max-width:760px) 80vw, 40vw" width="1600" height="2133" alt="Bouteilles au soleil d&#x27;hiver" loading="lazy" decoding="async"></button><button data-g="creperie"><img src="img/gg_33.webp" srcset="img/gg_33_s.webp 640w, img/gg_33.webp 1600w" sizes="(max-width:760px) 80vw, 40vw" width="1600" height="2133" alt="Bières au frais dans la neige" loading="lazy" decoding="async"></button><button data-g="creperie"><img src="img/gg_19.webp" srcset="img/gg_19_s.webp 640w, img/gg_19.webp 1600w" sizes="(max-width:760px) 80vw, 40vw" width="1600" height="3463" alt="Crêpe et glace sur une table gravée Le Repaire" loading="lazy" decoding="async"></button><button data-g="creperie"><img src="img/gg_26.webp" srcset="img/gg_26_s.webp 640w, img/gg_26.webp 1600w" sizes="(max-width:760px) 80vw, 40vw" width="1600" height="1645" alt="La fresque de la crêperie" loading="lazy" decoding="async"></button></div>
 </section><section style="padding-top:0">
   <div class="wrap event">
-    <div class="rv"><img src="img/gg_39.webp" srcset="img/gg_39_s.webp 640w, img/gg_39.webp 1596w" sizes="(max-width:760px) 100vw, 50vw" width="1596" height="1065" alt="Duo guitare et voix en concert à la crêperie" loading="lazy" decoding="async"></div>
+    <div class="rv concert-media"><img src="img/gg_39.webp" srcset="img/gg_39_s.webp 640w, img/gg_39.webp 1596w" sizes="(max-width:760px) 100vw, 50vw" width="1596" height="1065" alt="Duo guitare et voix en concert à la crêperie" loading="lazy" decoding="async">
+      <figure class="poster taped"><img src="img/gg_41.webp" srcset="img/gg_41_s.webp 640w, img/gg_41.webp 1000w" sizes="(max-width:860px) 40vw, 18vw" width="1000" height="1414" alt="Affiche d&#x27;un concert blues, électro et acoustique à la crêperie" loading="lazy" decoding="async"></figure></div>
     <div class="rv" style="display:grid;gap:22px">
       <h2>Les soirs de concert</h2>
-      <p class="lead">Blues, électro, acoustique : certains soirs, la crêperie devient une petite salle de concert, avec un menu du soir. Les dates sont annoncées sur Instagram et par téléphone.</p>
+      <p class="lead">Certains soirs, on pousse les tables : blues, acoustique, parfois électro, avec un menu du soir. Les dates sont annoncées sur Instagram et au téléphone.</p>
       <div class="ctas"><a class="arrow" href="https://www.instagram.com/creperierepairefeclaz73/" target="_blank" rel="noopener">Suivre la crêperie sur Instagram</a></div>
     </div>
   </div>
 </section><section>
   <div class="wrap voices">
-    <div class="score rv"><b>4,7</b><p class="stars" aria-hidden="true">★★★★★</p><small><a href="https://maps.google.com/?cid=3822162729861042541" target="_blank" rel="noopener">144 avis Google</a><br>4,9 sur Tripadvisor pour la crêperie</small></div>
+    <div class="score rv"><b>4,7<sup>/5</sup></b><small><a href="https://maps.google.com/?cid=3822162729861042541" target="_blank" rel="noopener">144 avis Google</a><br>4,9/5 sur Tripadvisor pour la crêperie</small></div>
     <div class="rv"><div class="quotes"><figure class="on"><blockquote>On a fêté un anniversaire sur un week-end au Repaire. Accueil très chaleureux. Les propriétaires ont tout fait pour nous arranger.</blockquote><figcaption>Maëlle L. · avis Google · séjour en juin</figcaption></figure><figure><blockquote>Superbe adresse. Nous avons séjourné au gîte avant notre rando.</blockquote><figcaption>Seb B. · avis Google · séjour en juillet</figcaption></figure><figure><blockquote>Crêpes et tartines excellentes. Accueil chaleureux. Chiens acceptés.</blockquote><figcaption>Avis Tripadvisor</figcaption></figure></div><div class="dots"><button aria-pressed="true" aria-label="Avis 1"></button><button aria-pressed="false" aria-label="Avis 2"></button><button aria-pressed="false" aria-label="Avis 3"></button></div></div>
   </div>
-</section><section class="on-dark" id="contact">
-  <div class="wrap">
-    <div class="contact-top">
-      <div class="rv">
-        <h2>Réserver, c'est un coup de fil</h2>
-        <a class="bigtel" href="tel:+33778214178">07 78 21 41 78</a>
-        <div class="alt-lines">
-          <span><a href="tel:+33615180081">06 15 18 00 81</a></span>
-          <span><a href="mailto:feclazgites@feclazgites.com">feclazgites@feclazgites.com</a><button class="copy-btn" data-copy="feclazgites@feclazgites.com">Copier</button></span>
-          <span>2348 route du Revard, La Féclaz, 73230 Les Déserts</span>
-        </div>
-        <div class="ctas" style="margin-top:30px"><a class="btn" href="https://www.google.com/maps/dir/?api=1&destination=45.642364,5.993623" target="_blank" rel="noopener"><span>Itinéraire</span></a></div>
-      </div>
-      <div class="rv">
-        <ul class="routes">
-          <li>Chambéry, gare SNCF<i></i><b>20 min</b></li>
-          <li>Aix-les-Bains, gare SNCF<i></i><b>25 min</b></li>
-          <li>Annecy<i></i><b>45 min</b></li>
-          <li>Lyon<i></i><b>1 h 30</b></li>
-          <li>Genève<i></i><b>2 h</b></li>
-        </ul>
-        <p class="moto"><img src="img/bike.webp" width="500" height="335" alt="" loading="lazy"><span>En moto ou autrement. Pour vos road trips dans les Alpes, on aime bien l'appli GPS <a href="https://app68.eu/" target="_blank" rel="noopener">app68</a>.</span></p>
-      </div>
-    </div>
-    
-  </div>
-</section><section><div class="wrap"><ul class="more rv"><li><a href="gite.html"><strong>Le gîte</strong><span>Appartements, tarifs et 36 photos des chambres</span></a></li><li><a href="spa.html"><strong>Le spa</strong><span>Jacuzzi et sauna à l'heure, jusqu'à 6 personnes</span></a></li><li><a href="station.html"><strong>La station</strong><span>Ski de fond, traîneau, rando, VTT</span></a></li><li><a href="contact.html"><strong>Venir</strong><span>Itinéraire, téléphone et questions fréquentes</span></a></li></ul></div></section>
+</section><section class="book-bar on-dark"><div class="wrap">
+  <p><b>Réserver</b> <a href="tel:+33778214178">07 78 21 41 78</a> <a href="mailto:feclazgites@feclazgites.com">feclazgites@feclazgites.com</a></p>
+  <div class="ctas"><a class="btn" href="contact.html#demande"><span>Demander un séjour</span></a><a class="arrow" href="https://www.google.com/maps/dir/?api=1&destination=45.642364,5.993623" target="_blank" rel="noopener">Itinéraire</a></div>
+</div></section>
 </main>
 <footer>
   <div class="wrap">
@@ -723,7 +776,7 @@ footer .legal-line{display:flex;flex-wrap:wrap;justify-content:space-between;gap
         <li><a href="https://www.chamberymontagnes.com/savoiegrandrevard/" target="_blank" rel="noopener">Savoie Grand Revard</a></li>
         <li><a href="mentions-legales.html">Mentions légales</a></li></ul></div>
     </div>
-    <p class="giant" aria-hidden="true">Le Repaire</p>
+    <img class="foot-logo" src="img/logo.png" width="356" height="400" alt="" loading="lazy">
     <div class="legal-line"><span>© EURL Le Repaire</span><span>La Féclaz · Savoie Grand Revard · Massif des Bauges</span></div>
   </div>
 </footer>
@@ -751,10 +804,11 @@ burger.addEventListener('click', () => {
   document.body.classList.toggle('menu-open', o);
   burger.setAttribute('aria-expanded', o);
   burger.setAttribute('aria-label', o ? 'Fermer le menu' : 'Ouvrir le menu');
+  $('path', burger).setAttribute('d', o ? 'M5 5l14 14M19 5L5 19' : 'M3 8h18M3 16h18');
 });
-const closeNav = () => { nav.classList.remove('open'); document.body.classList.remove('menu-open'); burger.setAttribute('aria-expanded', 'false'); burger.setAttribute('aria-label', 'Ouvrir le menu'); };
+const closeNav = () => { nav.classList.remove('open'); document.body.classList.remove('menu-open'); burger.setAttribute('aria-expanded', 'false'); burger.setAttribute('aria-label', 'Ouvrir le menu'); $('path', burger).setAttribute('d', 'M3 8h18M3 16h18'); };
 document.addEventListener('keydown', e => { if (e.key === 'Escape' && nav.classList.contains('open')) { closeNav(); burger.focus(); } });
-nav.addEventListener('click', e => { if (e.target.closest('a')) { nav.classList.remove('open'); document.body.classList.remove('menu-open'); burger.setAttribute('aria-expanded', 'false'); } });
+nav.addEventListener('click', e => { if (e.target.closest('a')) closeNav(); });
 
 // reveal on scroll (content is in the HTML; this only adds motion)
 const rv = $$('.rv');
@@ -787,7 +841,7 @@ if (qs.length) {
   const show = i => { q = (i + qs.length) % qs.length; qs.forEach((f, j) => f.classList.toggle('on', j === q)); qd.forEach((b, j) => b.setAttribute('aria-pressed', j === q)); };
   qd.forEach((b, j) => b.addEventListener('click', () => { show(j); clearInterval(qt); }));
   show(0);
-  if (!reduce) qt = setInterval(() => show(q + 1), 6500);
+  if (!reduce) qt = setInterval(() => show(q + 1), 9000);
 }
 
 // film strip: drag to scroll + arrows
@@ -868,13 +922,21 @@ if (lb) {
   lb.addEventListener('touchend', e => { const d = e.changedTouches[0].clientX - tx; if (Math.abs(d) > 50) step(d < 0 ? 1 : -1); });
 }
 
-// click-to-load Google embeds (no Google cookies until asked)
-$$('.embed').forEach(el => $('button', el)?.addEventListener('click', () => {
-  const f = document.createElement('iframe');
-  f.src = el.dataset.src; f.title = el.dataset.title; f.allowFullscreen = true;
-  f.referrerPolicy = 'no-referrer-when-downgrade'; f.allow = 'fullscreen';
-  el.replaceChildren(f);
-}));
+// stay request: build the e-mail in the visitor's own mail app (no server)
+const ask = $('#ask');
+if (ask) {
+  const today = new Date().toISOString().slice(0, 10);
+  $('#f-arr').min = today; $('#f-dep').min = today;
+  $('#f-arr').addEventListener('change', e => { $('#f-dep').min = e.target.value; });
+  ask.addEventListener('submit', e => {
+    e.preventDefault();
+    const v = id => $(id).value.trim();
+    const fr = d => d ? d.split('-').reverse().join('/') : '';
+    const body = [`Arrivée : ${fr(v('#f-arr'))}`, `Départ : ${fr(v('#f-dep'))}`, `Adultes : ${v('#f-ad')}`, `Enfants : ${v('#f-en')}`,
+      `Logement : ${v('#f-log')}`, `Formule : ${v('#f-for')}`, `Spa : ${$('#f-spa').checked ? 'oui' : 'non'}`, '', v('#f-msg')].join('\n');
+    location.href = `mailto:${ask.dataset.to}?subject=${encodeURIComponent('Demande de séjour du ' + fr(v('#f-arr')) + ' au ' + fr(v('#f-dep')))}&body=${encodeURIComponent(body)}`;
+  });
+}
 
 // copy buttons
 $$('[data-copy]').forEach(b => b.addEventListener('click', () => {
