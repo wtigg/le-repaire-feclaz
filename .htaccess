@@ -1,0 +1,29 @@
+ErrorDocument 404 /404.html
+RewriteEngine On
+RewriteCond %{HTTPS} off [OR]
+RewriteCond %{HTTP_HOST} ^www\. [NC]
+RewriteRule ^(.*)$ https://feclazgites.com/$1 [R=301,L]
+RewriteRule ^blog/?$ / [R=301,L]
+RewriteRule ^blog/gite_repaire/?$ /gite.html [R=301,L]
+RewriteRule ^blog/creperie/?$ /creperie.html [R=301,L]
+RewriteRule ^blog/loisirs/?$ /station.html [R=301,L]
+RewriteRule ^blog/(es/)?(infos|contact)/?$ /contact.html [R=301,L]
+RewriteRule ^blog/legal/?$ /mentions-legales.html [R=301,L]
+RewriteRule ^blog/aout-2022-le-spa/?$ /spa.html [R=301,L]
+RewriteRule ^blog/envie-de-douceur/?$ /creperie.html [R=301,L]
+RewriteRule ^blog/a-fond-les-bauges/?$ /station.html [R=301,L]
+RewriteRule ^blog/data/medias/spa/ /spa.html [R=301,L]
+RewriteRule ^blog/data/medias/diapo/ /gite.html [R=301,L]
+RewriteRule ^blog/.*$ / [R=301,L]
+RewriteRule ^index\.html$ / [R=301,L]
+RewriteRule ^legal\.htm$ /mentions-legales.html [R=301,L]
+<IfModule mod_expires.c>
+ExpiresActive On
+ExpiresByType image/webp "access plus 1 year"
+ExpiresByType image/png "access plus 1 year"
+ExpiresByType image/jpeg "access plus 1 year"
+ExpiresByType text/html "access plus 1 hour"
+</IfModule>
+<IfModule mod_deflate.c>
+AddOutputFilterByType DEFLATE text/html text/plain text/css application/javascript application/json image/svg+xml application/xml
+</IfModule>
