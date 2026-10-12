@@ -699,6 +699,48 @@ footer li a,.alt-lines a{display:inline-block;padding-block:8px}
 .collage .c2 figcaption{position:static;margin-top:10px;transform:none}
 @media (max-width:980px){.tabs{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;gap:0 22px}.tabs::-webkit-scrollbar{display:none}.tabs button{flex:none;margin-bottom:0}}
 .sh-media img[src*="gg_13"]{object-position:center 80%}
+/* lighter rules: hairlines instead of 3px bars, no dotted leaders on short lists */
+.spec,.rates,.hours,.score,.acts,.season-cols > *,.routes,.pension,.faq,.more,.ask,.open-line{border-top-width:1px}
+.board thead th{border-bottom-width:1px}.board tr.whole td,.board tr.whole{border-top-width:1px}
+.filters,.tabs{border-bottom-width:1px}
+.rates li i,.routes li i{visibility:hidden}
+.dish i{border-bottom-width:1px}
+.spec div:last-child,.hours div:last-child,.rates li:last-child,.routes li:last-child{border-bottom:0}
+.moto{display:block}
+/* wide section: full-bleed photo, text below in two columns */
+.wide{padding-top:0}
+.wide.flush{padding-top:clamp(20px,4vw,60px)}
+.wide-media{margin:0}
+.wide-media img{width:100%;aspect-ratio:21/8;object-fit:cover;display:block}
+.wide-text{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px clamp(20px,3vw,40px);margin-top:clamp(36px,5vw,64px);align-items:start}
+.wide-text > h2{grid-column:1/span 5;font-size:clamp(2.6rem,4.6vw,4.8rem)}
+.wide-text > div{grid-column:7/span 6;display:grid;gap:22px;justify-items:start}
+@media (max-width:860px){.wide-media img{aspect-ratio:4/3}.wide-text > h2,.wide-text > div{grid-column:1/-1}}
+/* concerts: dark band, photos side by side */
+.gig .gig-text{margin-top:0}
+.gig-media{display:grid;grid-template-columns:2fr 1fr;gap:20px;margin-top:clamp(36px,5vw,64px);align-items:stretch}
+.gig-media img{width:100%;height:100%;object-fit:cover}
+.gig-media figure{margin:0}
+@media (max-width:760px){.gig-media{grid-template-columns:1fr}.gig-media figure img{height:auto}}
+/* hosts: centered letter */
+.hosts.centered{grid-template-columns:1fr;justify-items:center;text-align:center;max-width:760px;margin-inline:auto}
+.hosts.centered .pair{height:clamp(200px,24vw,300px)}
+.hosts.centered .letter{justify-items:center}
+/* mobile dock: icon over label */
+@media (max-width:980px){
+  .dock{box-shadow:0 -10px 30px -12px rgba(0,0,0,.35);border-top:0}
+  .dock a{display:flex;flex-direction:column;justify-content:center;align-items:center;gap:6px;min-height:62px;font-size:.72rem;letter-spacing:.14em}
+  .dock a + a{border-left:1px solid var(--night-rule)}
+  .dock svg{flex:none}
+}
+@media (max-width:980px){body{padding-bottom:calc(62px + env(safe-area-inset-bottom,0px))}}
+/* gallery: even grid, no holes */
+.masonry{columns:auto;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.masonry button{margin:0}
+.masonry img{aspect-ratio:3/2;object-fit:cover;height:100%}
+@media (max-width:640px){.masonry{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.wide{padding-top:clamp(48px,7vw,110px)}
+.score b{margin-bottom:.14em}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://feclazgites.com/"}, {"@type": "ListItem", "position": 2, "name": "Le spa", "item": "https://feclazgites.com/spa.html"}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "DaySpa", "@id": "https://feclazgites.com/#spa", "name": "Spa du Repaire", "url": "https://feclazgites.com/spa.html", "telephone": "+33 7 78 21 41 78", "address": {"@type": "PostalAddress", "streetAddress": "2348 route du Revard", "addressLocality": "Les Déserts", "postalCode": "73230", "addressRegion": "Savoie", "addressCountry": "FR"}, "geo": {"@type": "GeoCoordinates", "latitude": 45.642364, "longitude": 5.993623}, "priceRange": "€€", "image": "https://feclazgites.com/img/spa_05.webp", "parentOrganization": {"@id": "https://feclazgites.com/#repaire"}}</script>
@@ -758,7 +800,7 @@ footer li a,.alt-lines a{display:inline-block;padding-block:8px}
     <div class="legal-line"><span>© EURL Le Repaire</span><span>La Féclaz · Savoie Grand Revard · Massif des Bauges</span></div>
   </div>
 </footer>
-<div class="dock" aria-label="Accès rapide"><a href="tel:+33778214178">Appeler</a><a href="https://www.google.com/maps/dir/?api=1&destination=45.642364,5.993623" target="_blank" rel="noopener">Itinéraire</a><a href="#spa">Tarifs</a></div>
+<div class="dock" aria-label="Accès rapide"><a href="tel:+33778214178"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>Appeler</a><a href="https://www.google.com/maps/dir/?api=1&destination=45.642364,5.993623" target="_blank" rel="noopener"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><path d="M3 11l18-8-8 18-2-8z"/></svg>Itinéraire</a><a href="#spa"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><path d="M17 6.5a7 7 0 1 0 0 11M4 10h9M4 14h9"/></svg>Tarifs</a></div>
 <div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="Photos">
   <div class="lb-top"><span id="lbCount"></span><button id="lbClose">Fermer</button></div>
   <div class="lb-stage"><button class="prev" id="lbPrev" aria-label="Photo précédente">‹</button><img id="lbImg" alt=""><button class="next" id="lbNext" aria-label="Photo suivante">›</button></div>
